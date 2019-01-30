@@ -78,36 +78,10 @@ givenName and affiliation to User. Jamie raises issue of keeping the
 redundant fullName attribute but it’s agreed this is fine. Schema change
 is agreed on and ticket is placed into the ‘Ready’ list.
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Item</td>
-<td>Description</td>
-<td>Assigned</td>
-</tr>
-<tr class="even">
-<td>113.1</td>
-<td>Look at Rolfs IDS Server and IDS Plugin pull request</td>
-<td>Stuart Pullinger</td>
-</tr>
-<tr class="odd">
-<td>113.2</td>
-<td>Organise a meeting for the
-<p>discussion of a Topcat</p>
-<p>replacement</p></td>
-<td>Catherine Jones</td>
-</tr>
-<tr class="even">
-<td>116.1</td>
-<td>Test Topcat 2.4.0 snapshot for diamond</td>
-<td>Brain</td>
-</tr>
-</tbody>
-</table>
+| Item  | Description                                                   | Assigned         |
+| ----- | ------------------------------------------------------------- | ---------------- |
+| 113.1 | Look at Rolfs IDS Server and IDS Plugin pull request          | Stuart Pullinger |
+| 113.2 | Organise a meeting for the discussion of a Topcat replacement | Catherine Jones  |
+| 116.1 | Test Topcat 2.4.0 snapshot for diamond                        | Brain            |
 
 Next meeting scheduled for Thursday 28th June, 3pm UK time.

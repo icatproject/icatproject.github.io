@@ -103,59 +103,14 @@ made.
 
 ## Actions
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Item</td>
-<td>Description</td>
-<td>Assigned</td>
-</tr>
-<tr class="even">
-<td>102.2</td>
-<td>Produce new releases of IJP components</td>
-<td>Brian Ritchie</td>
-</tr>
-<tr class="odd">
-<td>113.1</td>
-<td>Look at Rolfs IDS Server and IDS Plugin pull request</td>
-<td>Stuart Pullinger</td>
-</tr>
-<tr class="even">
-<td>113.2</td>
-<td>Organise a meeting for the
-<p>discussion of a Topcat</p>
-<p>replacement</p></td>
-<td>Catherine Jones</td>
-</tr>
-<tr class="odd">
-<td>115.3</td>
-<td>Create a timetable for discussions of schema changes</td>
-<td>Stuart Pullinger</td>
-</tr>
-<tr class="even">
-<td>116.1</td>
-<td>Test Topcat 2.4.0 snapshot on
-<p>ISIS and diamond</p></td>
-<td>Jamie and Stuart</td>
-</tr>
-<tr class="odd">
-<td>116.2</td>
-<td>Share diamond download test
-<p>script.</p></td>
-<td>Stuart</td>
-</tr>
-<tr class="even">
-<td>116.3</td>
-<td>Look at converting setup scripts
-<p>to python 3</p></td>
-<td>Stuart</td>
-</tr>
-</tbody>
-</table>
+| Item  | Description                                                  | Assigned         |
+| ----- | ------------------------------------------------------------ | ---------------- |
+| 102.2 | Produce new releases of IJP components                       | Brian Ritchie    |
+| 113.1 | Look at Rolfs IDS Server and IDS Plugin pull request         | Stuart Pullinger |
+| 113.2 | Organise a meeting for thediscussion of a Topcat replacement | Catherine Jones  |
+| 115.3 | Create a timetable for discussions of schema changes         | Stuart Pullinger |
+| 116.1 | Test Topcat 2.4.0 snapshot on ISIS and diamond               | Jamie and Stuart |
+| 116.2 | Share diamond download test script.                          | Stuart           |
+| 116.3 | Look at converting setup scripts to python 3                 | Stuart           |
 
 Next meeting scheduled for Thursday 24th May, 3pm UK time.
