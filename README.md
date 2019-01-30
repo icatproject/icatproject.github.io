@@ -10,6 +10,8 @@ The `static` folder contains other resources such as PDFs. These are copied auto
 
 To develop locally, [install GatsbyJS](https://www.gatsbyjs.org/tutorial/part-zero/) and clone this branch and then run `gatsby develop` in the resulting repository. This will build the site at `http://localhost:8000`
 
+To deploy manually, run `npm run deploy`. This will automatically build and publish the build to the `master` branch
+
 ## Notes about creating/editing site content
 
 - All top level folders of the `content` directory are converted into navbar headers and their children into dropdown items. See `navbar.js` and `dropdown.js` for more info on this
