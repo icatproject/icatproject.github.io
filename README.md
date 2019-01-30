@@ -1,60 +1,26 @@
-This is a test version of the ICAT website which uses Github Pages. You can view the site [here](https://icatproject.github.io). To change the content of the site, you will generally just need to edit a `.md` file. For this purpose, files and directories starting with a `.` or `_` can be ignored.
+# ICAT Project website
 
-## Site Map
-- index.md
-  - about.md
-    - about/collaboration.md
-    - about/clf.md
-    - about/hzb.md
-    - about/isis.md
-    - about/octopus.md
-  - support.md
-    - support/faq.md
-    - support/reporting_bugs.md
-  - docs.md
-  - apis.md
-    - apis/
-  - developers.md
+This is the source code of the [icatproject.github.io](https://icatproject.github.io) GitHub Pages site. It uses [GatsbyJS](https://www.gatsbyjs.org/) to generate the site using React for the structure of the site and Markdown files for the site contents.
 
-## Setting up a local copy of the site
-There are generic instructions for setting up a Github Pages site locally [here](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/).
+The `src` folder contains all the React code used to create the site. Look here if you need to edit the layout of the site or add new functionality
 
-### Quickstart (for Windows)
-- Install [Git](https://git-for-windows.github.io/)
-- Install [Ruby](https://rubyinstaller.org/). I installed Ruby 2.2.
-- In Git Bash:
-  - Install Bundler:
-  ```Shell
-  gem install bundler
-  ```
-  - Clone the git repository:
-  ```Shell
-  git clone https://github.com/icatproject/icatproject.github.io.git
-  ```
-  - Enter the directory:
-  ```Shell
-  cd icatproject.github.io
-  ```
-  - Install the dependencies:
-  ```Shell
-  bundle install
-  ```
-  - Run the site locally:
-  ```Shell
-  bundle exec jekyll serve
-  ```
-- Preview the site in your browser at `http://localhost:4000`.
+The `content` folder contains all the Markdown files and images used to fill in the site contents. If you need to edit site content or add a new page then look here.
 
-If you get the error `Liquid Exception: SSL_connect returned=1...`, it is because the version of openssl in the Ruby Gem repository does not come with an approved CA bundle. There are links to solutions [here](https://github.com/arshad/Google-Form-Octopress/issues/1). If you are using Git Bash on Windows, the [steps](https://gist.github.com/fnichol/867550) are:
-- Download the `cacert.pem` file from Curl [here](http://curl.haxx.se/ca/cacert.pem)
-- Put it somewhere. I put it at `C:\Ruby22-x64\cacert.pem`.
-- Create/edit the file at `~/.bashrc` to add:
-  ```Shell
-  export SSL_CERT_FILE=/c/Ruby22-x64/cacert.pem
+The `static` folder contains other resources such as PDFs. These are copied automatically to the `public` folder, retaining any file structure.
+
+To develop locally, [install GatsbyJS](https://www.gatsbyjs.org/tutorial/part-zero/) and clone this branch and then run `gatsby develop` in the resulting repository. This will build the site at `http://localhost:8000`
+
+## Notes about creating/editing site content
+
+- All top level folders of the `content` directory are converted into navbar headers and their children into dropdown items. See `navbar.js` and `dropdown.js` for more info on this
+- When creating a new Markdown file, ensure to give it a frontmatter section with a title - and if it is a set of meeting minutes a date. The format is as shown below:
   ```
-  (note the change to the path). 
-- In Git Bash:
-  ```Shell
-  source ~/.bashrc
+  ---
+  title: My Title
+  date: 2019-01-30
+  ---
   ```
-- Proceed with 'Run the site locally' above.
+- To automatically give an image a caption, use the below format:
+  ```
+  [image title](image_url "Your caption here")
+  ```
