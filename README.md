@@ -8,7 +8,7 @@ The `content` folder contains all the Markdown files and images used to fill in 
 
 The `static` folder contains other resources such as PDFs. These are copied automatically to the `public` folder, retaining any file structure.
 
-To develop locally, [install GatsbyJS](https://www.gatsbyjs.org/tutorial/part-zero/) and clone this branch and then run `npm install` to install all the needed dependencies and then run `gatsby develop` in the resulting repository. This will build the site at `http://localhost:8000`
+To develop locally, [install GatsbyJS](https://www.gatsbyjs.org/tutorial/part-zero/) and clone this branch (and change into its directory) and then run `npm install` to install all the needed dependencies and then run `gatsby develop`. This will build the site at `http://localhost:8000`
 
 To deploy manually, run `npm run deploy`. This will automatically build and publish the build to the `master` branch
 
