@@ -1,6 +1,5 @@
 ---
 title: Welcome to the ICAT Project
-layout: default
 ---
 
 The ICAT software takes data from large scientific facilities - such as particle accelerators - and catalogues and indexes it so scientists can find the data they need and share it with their team.

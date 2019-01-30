@@ -1,6 +1,5 @@
 ---
 title: developers
-layout: default
 ---
 
 # Technical Architecture

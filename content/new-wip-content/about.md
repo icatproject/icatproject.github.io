@@ -1,6 +1,5 @@
 ---
 title: about
-layout: default
 ---
 
 The ICAT software takes data from large scientific facilities - such as particle accelerators - and catalogues and indexes it so scientists can find the data they need and share it with their team. A simple REST interface allows scientific instrument designers to quickly upload their data to the system for indexing and cataloging. TopCat, ICAT's easy to use web interface, allows scientists and collaborators to effortlessly search and download their data. ICAT's secure authentication system allows principal investigators to control their data and ensures users can only access data which they are allowed to access. (Mention DOIs here?)
