@@ -44,7 +44,7 @@ pre-production. Brian notes to be aware of the changes to
 topcat.properties  when upgrading.
 
 **IJP (BR) –** Brian reviewed in-progress issues in waffle.io and closed
-most of them. Reports that ** **IJP job to SCARF no longer works due to
+most of them. Reports that \*\* \*\*IJP job to SCARF no longer works due to
 problem with platform LSF.
 
 **IDS (RK) –** Snapshot released and no feedback received yet. Waiting
@@ -158,12 +158,4 @@ made.
 </tbody>
 </table>
 
- 
-
 Next meeting scheduled for Thursday 24th May, 3pm UK time.
-
- 
-
- 
-
-[Edit](https://icatproject.org/wp-admin/post.php?post=1624&action=edit)

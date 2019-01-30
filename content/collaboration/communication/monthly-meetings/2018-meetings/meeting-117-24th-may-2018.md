@@ -47,8 +47,6 @@ but is unsure yet.
 **IDS (RK) –** Fixed JMS session bug in notification transmitter. The
 snapshot is considered ready for release.
 
- 
-
 Site Updates
 
 **Diamond (SR)** – Diamond production has been updated to use Payara.
@@ -79,8 +77,6 @@ There’s discussion about icat.server issue \#201, adding familyName,
 givenName and affiliation to User. Jamie raises issue of keeping the
 redundant fullName attribute but it’s agreed this is fine. Schema change
 is agreed on and ticket is placed into the ‘Ready’ list.
-
- 
 
 <table>
 <colgroup>
@@ -114,8 +110,4 @@ is agreed on and ticket is placed into the ‘Ready’ list.
 </tbody>
 </table>
 
- 
-
 Next meeting scheduled for Thursday 28th June, 3pm UK time.
-
-[Edit](https://icatproject.org/wp-admin/post.php?post=1633&action=edit)

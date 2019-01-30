@@ -22,16 +22,16 @@ but RK and MC are not attending.
 
 ##### ICAT Server (SP):
 
-  - Updated ICAT installation tutorial to use Payara and latest versions
-  - Rolf brings up point on proxy configuration for ICAT. Not present in
-    tutorial.
-  - Non-ascii characters are not correctly returned from the REST API.
-    RK and SP investigating the cause.
+- Updated ICAT installation tutorial to use Payara and latest versions
+- Rolf brings up point on proxy configuration for ICAT. Not present in
+  tutorial.
+- Non-ascii characters are not correctly returned from the REST API.
+  RK and SP investigating the cause.
 
 ##### Topcat (BR)
 
-  - Rewritten Topcat getsize to use IDS API.
-  - Reference to Topcat.css issue resolved.
+- Rewritten Topcat getsize to use IDS API.
+- Reference to Topcat.css issue resolved.
 
 **IJP (BR), IDS (RK) and Python ICAT (RK)** – Nothing to report.
 
@@ -53,15 +53,9 @@ Assigned
 
 #### Actions
 
- 
-
 |       |                                                                |                 |
 | ----- | -------------------------------------------------------------- | --------------- |
 | 113.2 | Organise a meeting for the discussion of a Topcat replacement  | Catherine Jones |
 | 119.1 | Review and update instructions for Apache proxy configuration. | SP and RK       |
 
- 
-
 Next meeting scheduled for Thursday 23rd August 3pm UK time.
-
-[Edit](https://icatproject.org/wp-admin/post.php?post=1650&action=edit)

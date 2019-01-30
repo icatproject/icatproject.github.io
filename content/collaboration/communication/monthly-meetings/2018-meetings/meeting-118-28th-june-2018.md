@@ -18,8 +18,6 @@ Actions from previous:
 download. Couldn’t test larger download due to storage D issue but since
 Topcat 2.4.0 has been released this action can be removed.
 
- 
-
 Stuart apologies for the lateness of last meetings minutes, this was
 because he was waiting to hear status of a graduate working on the ICAT
 project, one graduate has been successfully recruited and will be
@@ -67,14 +65,10 @@ Stuart asks if Alex would give a demo at the next meeting.
 **HZB (RK) –** Rolf reports he is installing the ICAT components to new
 machines and hopes to be done by August.
 
- 
-
 Stuart reports that Diamond is investigating whether ICAT is the correct
 tool for them with their ever increasing volume of data, which is
 currently over 2B datafiles (compared to ISIS’ 17 million\!). This is
 only in the planning stage at the moment.
-
- 
 
 Waffle.IO tickets
 
@@ -101,17 +95,9 @@ The other schema changes will be discussed another time as there are
 still schema changes waiting to be
 implemented.
 
- 
-
 |       |                                                               |                 |
 | ----- | ------------------------------------------------------------- | --------------- |
 | Item  | Description                                                   | Assigned        |
 | 113.2 | Organise a meeting for the discussion of a Topcat replacement | Catherine Jones |
 
- 
-
 Next meeting scheduled for Thursday 26th July 3pm UK time.
-
- 
-
-[Edit](https://icatproject.org/wp-admin/post.php?post=1646&action=edit)

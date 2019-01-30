@@ -64,15 +64,3 @@ March.
 | 102.2 | Produce new releases of IJP components                        | Brian Ritchie    |
 | 113.1 | Look at Rolfs IDS Server and IDS Plugin pull request          | Stuart Pullinger |
 | 113.2 | Organise a meeting for the discussion of a Topcat replacement | Catherine Jones  |
-
- 
-
- 
-
- 
-
- 
-
- 
-
-[Edit](https://icatproject.org/wp-admin/post.php?post=1605&action=edit)

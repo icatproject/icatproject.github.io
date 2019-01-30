@@ -25,10 +25,10 @@ contact <dr.s.m.fisher@gmail.com>
 
 Records of the meetings are grouped by year:
 
-- [up to May 2014](https://icatproject.org/collaboration/communication/monthly-meetings/up-to-may-2014/)
-- [from June 2014 ](http://icatproject.org/collaboration/communication/monthly-meetings/2014-meetings/ "2014 Meetings")
-- [2015](http://icatproject.org/collaboration/communication/monthly-meetings/2015-meetings/ "2015 Meetings")
-- [2016](http://icatproject.org/collaboration/communication/monthly-meetings/2016-meetings/ "2016 Meetings")
-- [2017](https://icatproject.org/collaboration/communication/monthly-meetings/2017-meetings/ "2017 Meetings")
-- [2018](https://icatproject.org/collaboration/communication/monthly-meetings/2018-meetings/ "2018 Meetings")
-- [2019](https://icatproject.org/collaboration/communication/monthly-meetings/2019-meetings/ "2019 Meetings")
+- [up to May 2014](/collaboration/communication/monthly-meetings/up-to-may-2014/)
+- [from June 2014 ](/collaboration/communication/monthly-meetings/2014-meetings/ "2014 Meetings")
+- [2015](/collaboration/communication/monthly-meetings/2015-meetings/ "2015 Meetings")
+- [2016](/collaboration/communication/monthly-meetings/2016-meetings/ "2016 Meetings")
+- [2017](/collaboration/communication/monthly-meetings/2017-meetings/ "2017 Meetings")
+- [2018](/collaboration/communication/monthly-meetings/2018-meetings/ "2018 Meetings")
+- [2019](/collaboration/communication/monthly-meetings/2019-meetings/ "2019 Meetings")

@@ -43,4 +43,4 @@ at [waffle.io](https://waffle.io/icatproject/icat.server)
   jobs are supported. It makes use of both ICAT core and the IDS. It
   is not currently shown on the diagram above.
 - To see the structure of ICAT you can use the [ICAT
-  Manager](https://icatproject.org/user-documentation/icat-manager/).
+  Manager](/user-documentation/icat-manager/).

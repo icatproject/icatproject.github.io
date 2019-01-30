@@ -110,7 +110,7 @@ from [https://repo.icatproject.org/site/ids/client/](https://repo.icatproject.o
 client version you are using and see the "IDS Client User Manual" which
 has pointers to the language specific documentation; the javadoc for the
 Java API and "pydoc ids" for the Python. In addition the 
-[Python ICAT](https://icatproject.org/user-documentation/python-icat/) client
+[Python ICAT](/user-documentation/python-icat/) client
 supports the IDS.
 
 # Calls

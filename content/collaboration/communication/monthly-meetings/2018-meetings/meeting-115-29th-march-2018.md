@@ -144,19 +144,19 @@ searchable data linked to ICAT.
 
 # Ticket Review (SP)
 
-  - Looking at tickets on https://waffle.io/icatproject/icat.server
-      - a ‘Kanban’-style display of the open issues in the Icatproject
-        Github repositories. There are 4 columns: Backlog (containing
-        most of the issues), Ready (currently empty), In Progress and
-        Done.
-  - Running out of time so only reviewing issues in ‘In Progress’
-  - ‘In Progress’ should mean the owner expects to report on it at next
-    meeting.
-  - IJP-related tickets to be reviewed by BR
-  - \#368 Topcat shaking screen: BR has a fix in test
-  - IDS items: RK happy to keep them in ‘In Progress’
-  - SP: asks all to look at Backlog and move to Ready any that are
-    higher-priority.
+- Looking at tickets on https://waffle.io/icatproject/icat.server
+  - a ‘Kanban’-style display of the open issues in the Icatproject
+    Github repositories. There are 4 columns: Backlog (containing
+    most of the issues), Ready (currently empty), In Progress and
+    Done.
+- Running out of time so only reviewing issues in ‘In Progress’
+- ‘In Progress’ should mean the owner expects to report on it at next
+  meeting.
+- IJP-related tickets to be reviewed by BR
+- \#368 Topcat shaking screen: BR has a fix in test
+- IDS items: RK happy to keep them in ‘In Progress’
+- SP: asks all to look at Backlog and move to Ready any that are
+  higher-priority.
 
 # Actions
 
@@ -170,8 +170,4 @@ searchable data linked to ICAT.
 | 115.2 | Review IJP-related tickets in ‘In Progress’ column on waffle.io                           | Brian Ritchie    |
 | 115.3 | Create a timetable for discussions of schema changes                                      | Stuart Pullinger |
 
- 
-
 Next meeting will be Thursday 26th April, 3pm UK time
-
-[Edit](https://icatproject.org/wp-admin/post.php?post=1612&action=edit)

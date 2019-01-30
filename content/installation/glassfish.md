@@ -86,7 +86,7 @@ calls use asadmin to identify the host and port to be used. For example:
 
 If you have a "genuine" SSL certificate from a trusted provider to
 install, follow the instructions
-at: [certificate](http://icatproject.org/installation/glassfish/certificate/ "Certificate").
+at: [certificate](/installation/glassfish-certificate/ "Certificate").
 
 If you don't have a trusted certificate then any java application
 seeking to use the glassfish will need to be told to trust it. Go to the
