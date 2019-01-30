@@ -84,7 +84,7 @@ export const Sidebar = () => (
         `}
       >
         <Link
-          to="/useful-links"
+          to="/about/useful-links"
           css={css`
             ${linkStyle}
           `}
