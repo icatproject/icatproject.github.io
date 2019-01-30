@@ -8,7 +8,7 @@ export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <SEO title="Search" keywords={[`ICAT`]} />
+      <SEO title={post.frontmatter.title} keywords={[`ICAT`]} />
       <header>
         <h1
           css={css`
