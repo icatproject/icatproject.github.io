@@ -1,6 +1,7 @@
-import { StaticQuery, graphql, Link } from "gatsby";
-import React from "react";
-import { css } from "@emotion/core";
+import { StaticQuery, graphql, Link } from 'gatsby';
+import React from 'react';
+import { css } from '@emotion/core';
+import PropTypes from 'prop-types';
 
 function renderListItem(node, shouldRender) {
   if (shouldRender) {
@@ -39,16 +40,15 @@ function renderListItem(node, shouldRender) {
         </Link>
       </li>
     );
-  } else {
-    return null;
   }
+  return null;
 }
 
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: false
+      expanded: false,
     };
     this.handleBlur = this.handleBlur.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
@@ -63,6 +63,7 @@ class Dropdown extends React.Component {
   }
 
   render() {
+    const { directoryName, data } = this.props;
     return (
       <li
         onMouseEnter={this.handleFocus}
@@ -89,7 +90,7 @@ class Dropdown extends React.Component {
         `}
       >
         <Link
-          to={this.props.directoryNode.name}
+          to={directoryName}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           css={css`
@@ -109,7 +110,7 @@ class Dropdown extends React.Component {
             }
           `}
         >
-          {this.props.directoryNode.name.replace(/-/g, " ")}
+          {directoryName.replace(/-/g, ' ')}
         </Link>
         <ul
           css={css`
@@ -132,25 +133,18 @@ class Dropdown extends React.Component {
             }
           `}
         >
-          {this.props.data.allMarkdownRemark.edges.map(({ node }) =>
+          {data.allMarkdownRemark.edges.map(({ node }) =>
             renderListItem(
               node,
-              //we don't want index.md files as dropdown list items
-              //we also only want files that are direct children of the directory
-              //or are index.md files of sub directories
-              !node.fileAbsolutePath.includes(
-                this.props.directoryNode.name + "/index.md"
-              ) &&
+              // we don't want index.md files as dropdown list items
+              // we also only want files that are direct children of the directory
+              // or are index.md files of sub directories
+              !node.fileAbsolutePath.includes(`${directoryName}/index.md`) &&
                 (node.fileAbsolutePath.includes(
-                  this.props.directoryNode.name +
-                    "/" +
-                    node.fileAbsolutePath.split("/").pop()
+                  `${directoryName}/${node.fileAbsolutePath.split('/').pop()}`
                 ) ||
-                  node.fileAbsolutePath.search(
-                    new RegExp(
-                      "/" + this.props.directoryNode.name + "/[^/]+/index.md"
-                    )
-                  ) !== -1)
+                  node.fileAbsolutePath.search(new RegExp(`/${directoryName}/[^/]+/index.md`)) !==
+                    -1)
             )
           )}
         </ul>
@@ -159,7 +153,7 @@ class Dropdown extends React.Component {
   }
 }
 
-export default ({ directoryNode }) => (
+const DropdownQueryContainer = ({ directoryName }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -179,6 +173,30 @@ export default ({ directoryNode }) => (
         }
       }
     `}
-    render={data => <Dropdown directoryNode={directoryNode} data={data} />}
+    render={data => <Dropdown directoryName={directoryName} data={data} />}
   />
 );
+
+export default DropdownQueryContainer;
+
+DropdownQueryContainer.propTypes = {
+  directoryName: PropTypes.string.isRequired,
+};
+
+Dropdown.propTypes = {
+  directoryName: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            frontmatter: PropTypes.shape({ title: PropTypes.string.isRequired }).isRequired,
+            fields: PropTypes.shape({ slug: PropTypes.string.isRequired }).isRequired,
+            fileAbsolutePath: PropTypes.string.isRequired,
+          }),
+        }).isRequired
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
+};

@@ -1,9 +1,8 @@
-import React from "react";
-
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Searchbar from "../components/searchbar";
-import css from "@emotion/css";
+import React from 'react';
+import { css } from '@emotion/core';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Searchbar from '../components/searchbar';
 
 const NotFoundPage = () => (
   <Layout>

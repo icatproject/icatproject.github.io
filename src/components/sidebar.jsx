@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "gatsby";
-import { css } from "@emotion/core";
-import RecentMeetings from "./recentMeetings";
-import Searchbar from "./searchbar";
+import React from 'react';
+import { Link } from 'gatsby';
+import { css } from '@emotion/core';
+import RecentMeetings from './recentMeetings';
+import Searchbar from './searchbar';
 
 export const linkStyle = css`
   text-decoration: none;
@@ -42,8 +42,8 @@ export const Sidebar = () => (
     `}
   >
     <h5>Search</h5>
-    <Searchbar />
-    <RecentMeetings />
+    <Searchbar id="sidebar-search" />
+    <RecentMeetings styles={{ linkStyle, liStyle, ulStyle }} />
     <h5>Links</h5>
     <ul
       css={css`

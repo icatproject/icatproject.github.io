@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
-import { css } from "@emotion/core";
-import Header from "./header";
-import { Sidebar } from "./sidebar";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
-import "./layout.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
+import { css } from '@emotion/core';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
+import Header from './header';
+import { Sidebar } from './sidebar';
+import './layout.css';
 
 library.add(faSearch);
 library.add(faBars);
@@ -53,7 +53,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

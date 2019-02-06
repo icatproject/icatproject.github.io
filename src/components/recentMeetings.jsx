@@ -1,9 +1,9 @@
-import { StaticQuery, graphql, Link } from "gatsby";
-import React from "react";
-import { css } from "@emotion/core";
-import { linkStyle, liStyle, ulStyle } from "./sidebar";
+import { StaticQuery, graphql, Link } from 'gatsby';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { css } from '@emotion/core';
 
-const RecentMeetings = () => (
+const RecentMeetings = ({ styles: { ulStyle, liStyle, linkStyle } }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -63,3 +63,19 @@ const RecentMeetings = () => (
 );
 
 export default RecentMeetings;
+
+RecentMeetings.propTypes = {
+  styles: PropTypes.shape({
+    liStyle: PropTypes.objectOf(PropTypes.string).isRequired,
+    ulStyle: PropTypes.objectOf(PropTypes.string).isRequired,
+    linkStyle: PropTypes.objectOf(PropTypes.string).isRequired,
+  }),
+};
+
+RecentMeetings.defaultProps = {
+  styles: {
+    liStyle: {},
+    ulStyle: {},
+    linkStyle: {},
+  },
+};

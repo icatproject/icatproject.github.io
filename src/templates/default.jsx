@@ -1,10 +1,11 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import { css } from "@emotion/core";
-import SEO from "../components/seo";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import { css } from '@emotion/core';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-export default ({ data }) => {
+const DefaultTemplate = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
@@ -25,6 +26,8 @@ export default ({ data }) => {
   );
 };
 
+export default DefaultTemplate;
+
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -36,3 +39,15 @@ export const query = graphql`
     }
   }
 `;
+
+DefaultTemplate.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      html: PropTypes.string.isRequired,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        date: PropTypes.string,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};

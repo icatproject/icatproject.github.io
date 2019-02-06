@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `ICAT`,
     description: `The ICAT software takes data from large scientific facilities - such as particle accelerators - and catalogues and indexes it so scientists can find the data they need and share it with their team.
-    ICAT is in use at some of the world's largest scientific facilities enabling access to millions of scientific results. The software is free & open-source and has been developed & maintained by an international collaboration for over 10 years.`
+    ICAT is in use at some of the world's largest scientific facilities enabling access to millions of scientific results. The software is free & open-source and has been developed & maintained by an international collaboration for over 10 years.`,
   },
   plugins: [
     `gatsby-plugin-catch-links`,
@@ -13,18 +13,18 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/content/`
-      }
+        path: `${__dirname}/content/`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-copy-linked-files`
+            resolve: `gatsby-remark-copy-linked-files`,
           },
           {
-            resolve: `gatsby-remark-relative-images`
+            resolve: `gatsby-remark-relative-images`,
           },
           {
             resolve: `gatsby-remark-images`,
@@ -34,12 +34,11 @@ module.exports = {
               // base for generating different widths of each image.
               maxWidth: 700,
               showCaptions: true,
-              wrapperStyle:
-                "margin-left: 0 !important; margin-right: 0 !important;"
-            }
-          }
-        ]
-      }
+              wrapperStyle: 'margin-left: 0 !important; margin-right: 0 !important;',
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -49,8 +48,8 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#000000`,
-        display: `browser`
-      }
+        display: `browser`,
+      },
     },
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
@@ -63,10 +62,10 @@ module.exports = {
           MarkdownRemark: {
             title: node => node.frontmatter.title,
             content: node => node.rawMarkdownBody,
-            slug: node => node.fields.slug
-          }
-        }
-      }
-    }
-  ]
+            slug: node => node.fields.slug,
+          },
+        },
+      },
+    },
+  ],
 };

@@ -10,6 +10,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.2.1",
+    "elasticlunr": "^0.9.5",
     "gatsby": "^2.0.106",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-emotion": "^4.0.1",
@@ -39,6 +40,13 @@
     "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
     "gh-pages": "^2.0.1",
     "prettier": "^1.16.2"
   },

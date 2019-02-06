@@ -1,28 +1,30 @@
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
-import { css } from "@emotion/core";
-import Navbar from "./navbar";
-import Searchbar from "./searchbar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { css } from '@emotion/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Navbar from './navbar';
+import Searchbar from './searchbar';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchVisible: false
+      searchVisible: false,
     };
     this.toggleSearch = this.toggleSearch.bind(this);
   }
 
   toggleSearch(e) {
     e.preventDefault();
-    this.setState({
-      searchVisible: !this.state.searchVisible
-    });
+    this.setState(prevState => ({
+      searchVisible: !prevState.searchVisible,
+    }));
   }
 
   render() {
+    const { siteTitle } = this.props;
+    const { searchVisible } = this.state;
     return (
       <header
         css={css`
@@ -47,7 +49,7 @@ class Header extends React.Component {
               text-decoration: none;
             `}
           >
-            {this.props.siteTitle}
+            {siteTitle}
           </Link>
         </h1>
         <div
@@ -78,7 +80,7 @@ class Header extends React.Component {
         </div>
         <Navbar />
 
-        {this.state.searchVisible ? (
+        {searchVisible ? (
           <div
             css={css`
               position: absolute;
@@ -100,6 +102,7 @@ class Header extends React.Component {
               `}
             >
               <Searchbar
+                id="header-search"
                 inputCSS={css`
                   width: 350px;
                   @media only screen and (max-width: 600px) {
@@ -116,11 +119,11 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string
+  siteTitle: PropTypes.string,
 };
 
 Header.defaultProps = {
-  siteTitle: ``
+  siteTitle: ``,
 };
 
 export default Header;
