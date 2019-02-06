@@ -90,7 +90,7 @@ class Dropdown extends React.Component {
         `}
       >
         <Link
-          to={directoryName}
+          to={`/${directoryName}`}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           css={css`
