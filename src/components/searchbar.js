@@ -1,13 +1,14 @@
-import React from "react";
-import { navigate } from "gatsby";
+import React from 'react';
+import { navigate } from 'gatsby';
 
 export default class Searchbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: ""
+      query: '',
     };
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   render() {
@@ -17,8 +18,9 @@ export default class Searchbar extends React.Component {
         <input
           title="Search"
           type="text"
-          defaultValue={this.state.query}
+          value={this.state.query}
           onKeyPress={this.handleKeyPress}
+          onChange={this.handleChange}
           placeholder="Search..."
           css={this.props.inputCSS}
         />
@@ -26,15 +28,18 @@ export default class Searchbar extends React.Component {
     );
   }
 
+  handleChange(e) {
+    this.setState({ query: e.target.value });
+  }
+
   handleKeyPress(e) {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       this.search(e);
     }
   }
 
   search = event => {
     const query = event.target.value;
-    this.setState({ query: query });
-    navigate("/search?query=" + query);
+    navigate('/search?query=' + query);
   };
 }
