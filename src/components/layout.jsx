@@ -31,7 +31,8 @@ const Layout = ({ children }) => (
           `}
         >
           <Sidebar />
-          <div
+          <main
+            id="content"
             css={css`
               margin-top: 70px;
               margin-left: 300px;
@@ -45,7 +46,7 @@ const Layout = ({ children }) => (
             `}
           >
             {children}
-          </div>
+          </main>
         </div>
       </>
     )}

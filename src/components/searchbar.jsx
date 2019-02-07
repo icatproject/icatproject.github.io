@@ -31,7 +31,8 @@ export default class Searchbar extends React.Component {
         <input
           id={id}
           title="Search"
-          type="text"
+          type="search"
+          role="searchbox"
           value={query}
           onKeyPress={Searchbar.handleKeyPress}
           onChange={this.handleChange}

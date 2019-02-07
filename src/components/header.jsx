@@ -48,40 +48,44 @@ class Header extends React.Component {
               float: left;
               text-decoration: none;
             `}
+            aria-label="home"
           >
             {siteTitle}
           </Link>
         </h1>
-        <div
+        <button
+          type="button"
           css={css`
             background-color: #24890d;
             float: right;
-            &:hover {
+            &:hover,
+            &:focus {
               background-color: #41a62a;
             }
             @media only screen and (max-width: 600px) {
               margin-right: 0;
             }
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            color: white;
+            line-height: 2.5rem;
+            width: 2.5rem;
           `}
+          onClick={this.toggleSearch}
+          aria-label="search"
+          aria-haspopup="true"
+          aria-controls="search-banner"
         >
-          <a
-            css={css`
-              display: inline-block;
-              text-align: center;
-              color: white;
-              line-height: 2.5rem;
-              width: 2.5rem;
-            `}
-            href="#search-toggle"
-            onClick={this.toggleSearch}
-          >
-            <FontAwesomeIcon icon="search" title="Search" />
-          </a>
-        </div>
+          <FontAwesomeIcon icon="search" title="Search" />
+        </button>
         <Navbar />
 
         {searchVisible ? (
           <div
+            id="search-banner"
+            aria-expanded={searchVisible}
             css={css`
               position: absolute;
               top: 2.5em;
@@ -93,7 +97,12 @@ class Header extends React.Component {
               }
             `}
           >
-            <div
+            <form
+              name="header search form"
+              role="search"
+              onSubmit={e => {
+                e.preventDefault();
+              }}
               css={css`
                 @media only screen and (min-width: 600px) {
                   float: right;
@@ -110,7 +119,7 @@ class Header extends React.Component {
                   }
                 `}
               />
-            </div>
+            </form>
           </div>
         ) : null}
       </header>

@@ -32,7 +32,7 @@ const RecentMeetings = ({ styles: { ulStyle, liStyle, linkStyle } }) => (
       }
     `}
     render={data => (
-      <div>
+      <nav aria-label="recent meetings">
         <h5>Recent Meetings</h5>
         <ul
           css={css`
@@ -57,7 +57,7 @@ const RecentMeetings = ({ styles: { ulStyle, liStyle, linkStyle } }) => (
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
     )}
   />
 );

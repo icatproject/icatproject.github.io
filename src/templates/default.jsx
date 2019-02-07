@@ -10,17 +10,15 @@ const DefaultTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} keywords={[`ICAT`]} />
-      <header>
-        <h1
-          css={css`
-            font-weight: 300;
-            text-transform: uppercase;
-            font-size: 33px;
-          `}
-        >
-          {post.frontmatter.title}
-        </h1>
-      </header>
+      <h1
+        css={css`
+          font-weight: 300;
+          text-transform: uppercase;
+          font-size: 33px;
+        `}
+      >
+        {post.frontmatter.title}
+      </h1>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
   );

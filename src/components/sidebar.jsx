@@ -41,99 +41,109 @@ export const Sidebar = () => (
       }
     `}
   >
-    <h5>Search</h5>
-    <Searchbar id="sidebar-search" />
-    <RecentMeetings styles={{ linkStyle, liStyle, ulStyle }} />
-    <h5>Links</h5>
-    <ul
-      css={css`
-        ${ulStyle}
-      `}
+    <form
+      name="sidebar search form"
+      role="search"
+      onSubmit={e => {
+        e.preventDefault();
+      }}
     >
-      <li
+      <h5>Search</h5>
+      <Searchbar id="sidebar-search" />
+    </form>
+    <RecentMeetings styles={{ linkStyle, liStyle, ulStyle }} />
+    <nav aria-label="quick links">
+      <h5>Links</h5>
+      <ul
         css={css`
-          ${liStyle}
+          ${ulStyle}
         `}
       >
-        <a
+        <li
           css={css`
-            ${linkStyle}
-          `}
-          href="http://groups.google.com/group/icatgroup"
-        >
-          icatgroup
-        </a>
-      </li>
-      <li
-        css={css`
-          ${liStyle}
-        `}
-      >
-        <a
-          css={css`
-            ${linkStyle}
-          `}
-          href="https://repo.icatproject.org/"
-        >
-          repo.icatproject.org
-        </a>
-      </li>
-      <li
-        css={css`
-          ${liStyle}
-        `}
-      >
-        <Link
-          to="/about/useful-links"
-          css={css`
-            ${linkStyle}
+            ${liStyle}
           `}
         >
-          Useful Links
-        </Link>
-      </li>
-      <li
-        css={css`
-          ${liStyle}
-        `}
-      >
-        <a
+          <a
+            css={css`
+              ${linkStyle}
+            `}
+            href="http://groups.google.com/group/icatgroup"
+          >
+            icatgroup
+          </a>
+        </li>
+        <li
           css={css`
-            ${linkStyle}
+            ${liStyle}
           `}
-          href="https://waffle.io/icatproject/icat.server"
         >
-          Waffle.io dashboard
-        </a>
-      </li>
-      <li
-        css={css`
-          ${liStyle}
-        `}
-      >
-        <a
+          <a
+            css={css`
+              ${linkStyle}
+            `}
+            href="https://repo.icatproject.org/"
+          >
+            repo.icatproject.org
+          </a>
+        </li>
+        <li
           css={css`
-            ${linkStyle}
+            ${liStyle}
           `}
-          href="https://github.com/icatproject"
         >
-          Github for icatproject
-        </a>
-      </li>
-      <li
-        css={css`
-          ${liStyle}
-        `}
-      >
-        <a
+          <Link
+            to="/about/useful-links"
+            css={css`
+              ${linkStyle}
+            `}
+          >
+            Useful Links
+          </Link>
+        </li>
+        <li
           css={css`
-            ${linkStyle}
+            ${liStyle}
           `}
-          href="https://github.com/icatproject-contrib"
         >
-          Github for icatproject-contrib
-        </a>
-      </li>
-    </ul>
+          <a
+            css={css`
+              ${linkStyle}
+            `}
+            href="https://waffle.io/icatproject/icat.server"
+          >
+            Waffle.io dashboard
+          </a>
+        </li>
+        <li
+          css={css`
+            ${liStyle}
+          `}
+        >
+          <a
+            css={css`
+              ${linkStyle}
+            `}
+            href="https://github.com/icatproject"
+          >
+            Github for icatproject
+          </a>
+        </li>
+        <li
+          css={css`
+            ${liStyle}
+          `}
+        >
+          <a
+            css={css`
+              ${linkStyle}
+            `}
+            href="https://github.com/icatproject-contrib"
+          >
+            Github for icatproject-contrib
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 );

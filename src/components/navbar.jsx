@@ -5,60 +5,124 @@ import { css } from '@emotion/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Dropdown from './dropdown';
 
-const Navbar = ({ data }) => (
-  <nav
-    css={css`
-      float: right;
-      margin: 0;
-      height: inherit;
-      @media (max-width: 600px) {
-        &:hover ul {
-          display: block;
-        }
-      }
-    `}
-  >
-    <a
-      css={css`
-        display: none;
-        width: 2.5rem;
-        height: 2.5rem;
-        text-align: center;
-        color: white;
-        line-height: 2.5rem;
-        @media (max-width: 600px) {
-          display: inline-block;
-        }
-        &:hover {
-          background-color: #939393;
-        }
-      `}
-      href="#"
-    >
-      <FontAwesomeIcon icon="bars" title="Menu" />
-    </a>
-    <ul
-      css={css`
-        padding: 0 0;
-        list-style: none;
-        display: inline;
-        @media (max-width: 600px) {
-          display: none;
-          position: absolute;
-          padding: 1px;
-          background: #000;
-          right: 0px;
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: false,
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+  }
+
+  handleBlur() {
+    this.setState({ expanded: false });
+  }
+
+  handleFocus() {
+    this.setState({ expanded: true });
+  }
+
+  handleClick() {
+    this.setState(currentState => ({ expanded: !currentState.expanded }));
+  }
+
+  render() {
+    const { data } = this.props;
+    const { expanded } = this.state;
+    const menuVisibiltyCSS = expanded
+      ? css`
+          left: inherit;
           top: 1.5rem;
-          width: 100%;
-        }
-      `}
-    >
-      {data.allDirectory.edges.map(({ node }) => (
-        <Dropdown directoryName={node.name} key={node.id} />
-      ))}
-    </ul>
-  </nav>
-);
+        `
+      : css`
+          top: -9999px;
+          left: -9999px;
+        `;
+    return (
+      <nav
+        css={css`
+          float: right;
+          margin: 0;
+          height: inherit;
+        `}
+      >
+        <a
+          href="#content"
+          css={css`
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            &:focus {
+              left: 5px;
+              top: 5px;
+            }
+            background-color: #f1f1f1;
+            color: #21759b;
+            border-radius: 3px;
+            padding: 15px;
+            text-decoration: none;
+            z-index: 10000;
+          `}
+        >
+          Skip to content
+        </a>
+        <button
+          onClick={this.handleClick}
+          type="button"
+          aria-haspopup="true"
+          css={css`
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: none;
+            width: 2.5rem;
+            height: 2.5rem;
+            text-align: center;
+            color: white;
+            line-height: 2.5rem;
+            @media (max-width: 600px) {
+              display: inline-block;
+            }
+            &:hover,
+            &:focus {
+              background-color: #939393;
+            }
+          `}
+          aria-controls="main-menu"
+        >
+          <FontAwesomeIcon icon="bars" title="Menu" />
+        </button>
+        <ul
+          onBlur={this.handleBlur}
+          onFocus={this.handleFocus}
+          onMouseLeave={this.handleBlur}
+          css={css`
+            padding: 0 0;
+            list-style: none;
+            display: inline;
+            @media (max-width: 600px) {
+              ${menuVisibiltyCSS}
+              right: 0px;
+              position: absolute;
+              padding: 1px;
+              background: #000;
+              width: 100%;
+            }
+          `}
+          aria-expanded={expanded}
+          aria-label="main-menu"
+          id="main-menu"
+        >
+          {data.allDirectory.edges.map(({ node }) => (
+            <Dropdown directoryName={node.name} key={node.id} menuExpanded={expanded} />
+          ))}
+        </ul>
+      </nav>
+    );
+  }
+}
 
 export default () => (
   <StaticQuery

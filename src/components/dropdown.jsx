@@ -3,47 +3,6 @@ import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 
-function renderListItem(node, shouldRender) {
-  if (shouldRender) {
-    return (
-      <li
-        key={node.id}
-        css={css`
-          @media (min-width: 600px) {
-            &:hover {
-              background-color: #41a62a;
-            }
-            line-height: 12px;
-          }
-          line-height: 6px;
-        `}
-      >
-        <Link
-          to={node.fields.slug}
-          css={css`
-            color: white;
-            text-decoration: none;
-            display: block;
-            padding: 12px 0.5rem;
-            font-size: 11px;
-            text-transform: uppercase;
-            @media (max-width: 600px) {
-              padding: 0.5rem 2rem;
-              text-align: left;
-              &:hover {
-                color: #24890d;
-              }
-            }
-          `}
-        >
-          {node.frontmatter.title}
-        </Link>
-      </li>
-    );
-  }
-  return null;
-}
-
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -52,6 +11,23 @@ class Dropdown extends React.Component {
     };
     this.handleBlur = this.handleBlur.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
+    this.renderListItem = this.renderListItem.bind(this);
+    this.updateMediaQuery = this.updateMediaQuery.bind(this);
+    this.mediaQuery = false;
+  }
+
+  componentDidMount() {
+    const mediaQuery = window.matchMedia('(max-width: 600px)');
+    this.updateMediaQuery(mediaQuery);
+    mediaQuery.addEventListener('change', this.updateMediaQuery);
+  }
+
+  updateMediaQuery(mediaQuery) {
+    if (mediaQuery.matches) {
+      this.setState({ mediaQuery: true });
+    } else {
+      this.setState({ mediaQuery: false });
+    }
   }
 
   handleBlur() {
@@ -62,8 +38,68 @@ class Dropdown extends React.Component {
     this.setState({ expanded: true });
   }
 
+  renderListItem(node, shouldRender) {
+    const { menuExpanded } = this.props;
+    const { mediaQuery } = this.state;
+    if (shouldRender) {
+      return (
+        <li
+          key={node.id}
+          css={css`
+            @media (min-width: 600px) {
+              line-height: 12px;
+            }
+            line-height: 6px;
+          `}
+        >
+          <Link
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            to={node.fields.slug}
+            tabIndex={mediaQuery && !menuExpanded ? -1 : 0}
+            css={css`
+              color: white;
+              text-decoration: none;
+              display: block;
+              padding: 12px 0.5rem;
+              font-size: 11px;
+              text-transform: uppercase;
+              @media (min-width: 600px) {
+                &:focus,
+                &:hover {
+                  background-color: #41a62a;
+                }
+              }
+              @media (max-width: 600px) {
+                padding: 0.5rem 2rem;
+                text-align: left;
+                &:hover,
+                &:focus {
+                  color: #24890d;
+                }
+              }
+            `}
+          >
+            {node.frontmatter.title}
+          </Link>
+        </li>
+      );
+    }
+    return null;
+  }
+
   render() {
-    const { directoryName, data } = this.props;
+    const { directoryName, data, menuExpanded } = this.props;
+    const { expanded, mediaQuery } = this.state;
+    const menuVisibiltyCSS = expanded
+      ? css`
+          left: inherit;
+          top: inherit;
+        `
+      : css`
+          top: -9999px;
+          left: -9999px;
+        `;
     return (
       <li
         onMouseEnter={this.handleFocus}
@@ -72,11 +108,9 @@ class Dropdown extends React.Component {
           float: left;
           background-color: black;
           @media (min-width: 600px) {
-            &:hover {
+            &:hover,
+            &:focus {
               background-color: #24890d;
-            }
-            &:hover ul {
-              display: block;
             }
             margin-right: 1px;
             line-height: 2.5rem;
@@ -93,6 +127,8 @@ class Dropdown extends React.Component {
           to={`/${directoryName}`}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
+          tabIndex={mediaQuery && !menuExpanded ? -1 : 0}
+          aria-haspopup="true"
           css={css`
             text-decoration: none;
             display: block;
@@ -100,11 +136,15 @@ class Dropdown extends React.Component {
             padding: 0 0.5rem;
             text-transform: uppercase;
             font-size: 11px;
-            &:focus + ul {
-              display: block;
+            @media (min-width: 600px) {
+              &:hover,
+              &:focus {
+                background-color: #24890d;
+              }
             }
             @media (max-width: 600px) {
-              &:hover {
+              &:hover,
+              &:focus {
                 color: #24890d;
               }
             }
@@ -114,13 +154,13 @@ class Dropdown extends React.Component {
         </Link>
         <ul
           css={css`
+            ${menuVisibiltyCSS}
             width: 10rem;
             list-style: none;
             padding: 0;
             margin: 0;
             background-color: #24890d;
             position: absolute;
-            display: none;
             @media (max-width: 600px) {
               background-color: black;
               position: static;
@@ -132,9 +172,10 @@ class Dropdown extends React.Component {
               line-height: 1rem;
             }
           `}
+          aria-label={`${directoryName.replace(/-/g, ' ')}-sub-menu`}
         >
           {data.allMarkdownRemark.edges.map(({ node }) =>
-            renderListItem(
+            this.renderListItem(
               node,
               // we don't want index.md files as dropdown list items
               // we also only want files that are direct children of the directory
@@ -153,7 +194,7 @@ class Dropdown extends React.Component {
   }
 }
 
-const DropdownQueryContainer = ({ directoryName }) => (
+const DropdownQueryContainer = ({ directoryName, menuExpanded }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -173,7 +214,9 @@ const DropdownQueryContainer = ({ directoryName }) => (
         }
       }
     `}
-    render={data => <Dropdown directoryName={directoryName} data={data} />}
+    render={data => (
+      <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />
+    )}
   />
 );
 
@@ -181,6 +224,7 @@ export default DropdownQueryContainer;
 
 DropdownQueryContainer.propTypes = {
   directoryName: PropTypes.string.isRequired,
+  menuExpanded: PropTypes.bool.isRequired,
 };
 
 Dropdown.propTypes = {
@@ -199,4 +243,5 @@ Dropdown.propTypes = {
       ).isRequired,
     }).isRequired,
   }).isRequired,
+  menuExpanded: PropTypes.bool.isRequired,
 };
