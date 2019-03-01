@@ -40,9 +40,6 @@ module.exports = {
               wrapperStyle: 'margin-left: 0 !important; margin-right: 0 !important;',
             },
           },
-          {
-            resolve: `gatsby-transformer-remark-plaintext`,
-          },
         ],
       },
     },
