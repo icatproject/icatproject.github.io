@@ -62,7 +62,7 @@ export default class SearchPage extends React.Component {
         <SEO title="Search" keywords={[`search`, `ICAT`]} />
         <h1>{`Search Results for: ${query}`}</h1>
         {results.map(page => (
-          <li key={page.slug}>
+          <article key={page.slug}>
             <h2>
               <Link
                 css={css`
@@ -73,8 +73,18 @@ export default class SearchPage extends React.Component {
                 {page.title}
               </Link>
             </h2>
-            <p>{page.excerpt}</p>
-          </li>
+            <p>
+              {page.excerpt}{' '}
+              <Link
+                css={css`
+                  color: green;
+                `}
+                to={page.slug}
+              >
+                Continue reading →
+              </Link>
+            </p>
+          </article>
         ))}
       </Layout>
     );
