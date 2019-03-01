@@ -1,3 +1,6 @@
+const remark = require('remark');
+const visit = require('unist-util-visit');
+
 module.exports = {
   siteMetadata: {
     title: `ICAT`,
@@ -37,6 +40,9 @@ module.exports = {
               wrapperStyle: 'margin-left: 0 !important; margin-right: 0 !important;',
             },
           },
+          {
+            resolve: `gatsby-transformer-remark-plaintext`,
+          },
         ],
       },
     },
@@ -63,6 +69,18 @@ module.exports = {
             title: node => node.frontmatter.title,
             content: node => node.rawMarkdownBody,
             slug: node => node.fields.slug,
+            excerpt: node => {
+              const excerptLength = 55;
+              let excerpt = '';
+              const tree = remark().parse(node.rawMarkdownBody);
+              visit(tree, 'text', treeNode => {
+                excerpt += `${treeNode.value} `;
+              });
+              return `${excerpt
+                .split(' ')
+                .slice(0, excerptLength)
+                .join(' ')} ...`;
+            },
           },
         },
       },

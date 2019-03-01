@@ -73,12 +73,7 @@ export default class SearchPage extends React.Component {
                 {page.title}
               </Link>
             </h2>
-            <p>
-              {`${page.content
-                .split(' ')
-                .slice(0, 55)
-                .join(' ')}...`}
-            </p>
+            <p>{page.excerpt}</p>
           </li>
         ))}
       </Layout>
