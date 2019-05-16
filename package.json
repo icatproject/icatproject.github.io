@@ -10,6 +10,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.2.1",
+    "axios": "^0.18.0",
     "elasticlunr": "^0.9.5",
     "gatsby": "^2.0.106",
     "gatsby-plugin-catch-links": "^2.0.9",
