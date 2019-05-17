@@ -16,11 +16,11 @@ class Project extends React.Component {
     axios.get("http://api.github.com/orgs/icatproject/repos")
     .then(response => {
       const promises = []
-        for (let i = 0; i <5; i++) {
+        for (let i = 0; i <response.data.length; i++) { const name = response.data[i].name
           const promise = axios.get(response.data[i].url + "/commits")
           .then(function (response) {
-          
-             loopdata.push(response.data[0].url)
+          const object = {name: name, url: response.data[0].html_url }
+             loopdata.push(object)
           }).catch(function(error){
             console.log("error" + error);
           })
@@ -35,21 +35,27 @@ Promise.all(promises).then(values => {
   render() {
       console.log(this.state.githubData)
       const listitems = []
-      for (let i = 0; i < this.state.githubData.length; i++) {
+      if (this.state.githubData.length !== 0){for (let i = 0; i < 5; i++) {
       listitems.push(  <li>
-        <a css={css`:visited {color: white}; :hover {color: green}; :link {color: white}; `} href={this.state.githubData[i]}>test</a>
+        <a css={css`text-decoration: none; :visited {color: white}; :hover {color: green}; :link {color: white}; font-size: 12px;`} href={this.state.githubData[i].url}>{this.state.githubData[i].name}</a>
         </li>)
        
       }
-
+    }
       return (
         <div>
-          <p>Recent commits</p>
-          <ul>
+           <nav aria-label="recent commits">
+           <h5>Recent Commits</h5>
+          <ul css={css`
+              list-style-type: none;
+              margin: 0;
+              padding:0;`
+            }>
              
               {listitems}
           
           </ul>
+          </nav>
         </div>
 
       )
