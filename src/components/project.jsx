@@ -19,7 +19,7 @@ class Project extends React.Component {
         for (let i = 0; i <response.data.length; i++) { const name = response.data[i].name
           const promise = axios.get(response.data[i].url + "/commits")
           .then(function (response) {
-          const object = {name: name, url: response.data[0].html_url }
+          const object = {name: name, url: response.data[0].html_url, date: response.data[0].commit.committer.date }
              loopdata.push(object)
           }).catch(function(error){
             console.log("error" + error);
@@ -35,9 +35,12 @@ Promise.all(promises).then(values => {
   render() {
       console.log(this.state.githubData)
       const listitems = []
-      if (this.state.githubData.length !== 0){for (let i = 0; i < 5; i++) {
+      const sortedlist = this.state.githubData.sort(function(a,b){
+        return new Date(b.date) - new Date(a.date);
+      })
+      if (sortedlist.length !== 0){for (let i = 0; i < 5; i++) {
       listitems.push(  <li>
-        <a css={css`text-decoration: none; :visited {color: white}; :hover {color: green}; :link {color: white}; font-size: 12px;`} href={this.state.githubData[i].url}>{this.state.githubData[i].name}</a>
+        <a css={css`text-decoration: none; :visited {color: white}; :link {color white}; :hover {color: green}; font-size: 12px;`} href={sortedlist[i].url}>{sortedlist[i].name}</a>
         </li>)
        
       }
