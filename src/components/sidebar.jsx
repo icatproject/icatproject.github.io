@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { css } from '@emotion/core';
 import RecentMeetings from './recentMeetings';
 import Searchbar from './searchbar';
-import Project from './project'
+import RecentCommits from './recentCommits';
 export const linkStyle = css`
   text-decoration: none;
   color: white;
@@ -145,6 +145,6 @@ export const Sidebar = () => (
         </li>
       </ul>
     </nav>
-    <Project></Project>
+    <RecentCommits />
   </div>
 );
