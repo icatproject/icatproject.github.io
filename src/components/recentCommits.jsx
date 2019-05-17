@@ -13,7 +13,7 @@ class recentCommits extends React.Component {
 
   componentWillMount() {
     const loopdata = [];
-    axios.get('http://api.github.com/orgs/icatproject/repos').then(reposResponse => {
+    axios.get('https://api.github.com/orgs/icatproject/repos').then(reposResponse => {
       const promises = [];
       for (let i = 0; i < reposResponse.data.length; i += 1) {
         const { name } = reposResponse.data[i];
