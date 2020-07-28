@@ -36,7 +36,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "format": "prettier --write \"src/**/*.js\" --write \"src/**/*.jsx\"",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint --ext js,jsx src --fix",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "deploy": "gatsby build && gh-pages -d public -b master"
@@ -48,7 +48,7 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "eslint --ext js,jsx src --fix",
+      "eslint --fix",
       "prettier --config .prettierrc --write"
     ]
   },

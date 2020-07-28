@@ -18,7 +18,7 @@ function SEO({ lang, keywords, title }) {
   return (
     <StaticQuery
       query={detailsQuery}
-      render={data => {
+      render={(data) => {
         const metaDescription = data.site.siteMetadata.description;
         return (
           <Helmet

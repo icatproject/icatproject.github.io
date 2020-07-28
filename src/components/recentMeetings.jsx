@@ -31,7 +31,7 @@ const RecentMeetings = ({ styles: { ulStyle, liStyle, linkStyle } }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <nav aria-label="recent meetings">
         <h5>Recent Meetings</h5>
         <ul

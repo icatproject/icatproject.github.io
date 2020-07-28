@@ -4,6 +4,7 @@ import { css } from '@emotion/core';
 import RecentMeetings from './recentMeetings';
 import Searchbar from './searchbar';
 import RecentCommits from './recentCommits';
+
 export const linkStyle = css`
   text-decoration: none;
   color: white;
@@ -44,7 +45,7 @@ export const Sidebar = () => (
     <form
       name="sidebar search form"
       role="search"
-      onSubmit={e => {
+      onSubmit={(e) => {
         e.preventDefault();
       }}
     >
