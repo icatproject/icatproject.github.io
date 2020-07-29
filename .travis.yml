@@ -7,11 +7,12 @@ cache: npm
 
 script: gatsby build
 
+before_deploy:
+  - base64 --decode <<< "$GITHUB_DEPLOY_PRIVATE_KEY" > deploy.key
+
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  keep-history: true
+  provider: pages:git
+  deploy_key: ./deploy.key
   local-dir: public
   target-branch: master
   on:
