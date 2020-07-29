@@ -44,6 +44,10 @@ function SEO({ lang, keywords, title }) {
                 property: `og:type`,
                 content: `website`,
               },
+              {
+                property: 'google-site-verification',
+                content: '9X6CrnxO5Y0COmvYo15fcva3BeU-Qd8XSu5xWV44EDM',
+              },
             ].concat(
               keywords.length > 0
                 ? {
