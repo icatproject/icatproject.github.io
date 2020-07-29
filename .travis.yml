@@ -11,7 +11,7 @@ before_deploy:
   - base64 --decode <<< "$GITHUB_DEPLOY_PRIVATE_KEY" > deploy.key
 
 deploy:
-  provider: pages:git
+  provider: pages
   deploy_key: ./deploy.key
   local-dir: public
   target-branch: master
