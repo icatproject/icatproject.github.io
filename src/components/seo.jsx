@@ -45,7 +45,7 @@ function SEO({ lang, keywords, title }) {
                 content: `website`,
               },
               {
-                property: 'google-site-verification',
+                name: 'google-site-verification',
                 content: '9X6CrnxO5Y0COmvYo15fcva3BeU-Qd8XSu5xWV44EDM',
               },
             ].concat(
