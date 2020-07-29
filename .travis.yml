@@ -12,8 +12,9 @@ before_deploy:
 
 deploy:
   provider: pages
+  edge: true
   deploy_key: ./deploy.key
-  local-dir: public
-  target-branch: master
+  local_dir: public
+  target_branch: master
   on:
     branch: gatsbyjs
