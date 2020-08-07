@@ -24,6 +24,10 @@ export const ulStyle = css`
   font-size: 11px;
 `;
 
+export const headerStyle = css`
+  margin: 12px 0;
+`;
+
 export const Sidebar = () => (
   <div
     css={css`
@@ -49,12 +53,24 @@ export const Sidebar = () => (
         e.preventDefault();
       }}
     >
-      <h5>Search</h5>
+      <h5
+        css={css`
+          ${headerStyle}
+        `}
+      >
+        Search
+      </h5>
       <Searchbar id="sidebar-search" />
     </form>
-    <RecentMeetings styles={{ linkStyle, liStyle, ulStyle }} />
+    <RecentMeetings styles={{ linkStyle, liStyle, ulStyle, headerStyle }} />
     <nav aria-label="quick links">
-      <h5>Links</h5>
+      <h5
+        css={css`
+          ${headerStyle}
+        `}
+      >
+        Links
+      </h5>
       <ul
         css={css`
           ${ulStyle}
@@ -146,6 +162,6 @@ export const Sidebar = () => (
         </li>
       </ul>
     </nav>
-    <RecentCommits />
+    <RecentCommits styles={{ linkStyle, liStyle, ulStyle, headerStyle }} />
   </div>
 );
