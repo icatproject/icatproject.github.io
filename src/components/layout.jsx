@@ -39,7 +39,7 @@ const Layout = ({ children }) => (
               margin-bottom: 1.5em;
               margin-right: 100px;
               float: left;
-              @media only screen and (max-width: 600px) {
+              @media only screen and (max-width: 768px) {
                 margin-right: 10px;
                 margin-left: 10px;
               }

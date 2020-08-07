@@ -83,7 +83,7 @@ class Navbar extends React.Component {
             text-align: center;
             color: white;
             line-height: 2.5rem;
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
               display: inline-block;
             }
             &:hover,
@@ -103,7 +103,7 @@ class Navbar extends React.Component {
             padding: 0 0;
             list-style: none;
             display: inline;
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
               ${menuVisibiltyCSS}
               right: 0px;
               position: absolute;
