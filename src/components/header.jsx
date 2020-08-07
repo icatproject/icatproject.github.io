@@ -17,7 +17,7 @@ class Header extends React.Component {
 
   toggleSearch(e) {
     e.preventDefault();
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       searchVisible: !prevState.searchVisible,
     }));
   }
@@ -100,7 +100,7 @@ class Header extends React.Component {
             <form
               name="header search form"
               role="search"
-              onSubmit={e => {
+              onSubmit={(e) => {
                 e.preventDefault();
               }}
               css={css`

@@ -11,15 +11,15 @@ class recentCommits extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const loopdata = [];
-    axios.get('https://api.github.com/orgs/icatproject/repos').then(reposResponse => {
+    axios.get('https://api.github.com/orgs/icatproject/repos').then((reposResponse) => {
       const promises = [];
       for (let i = 0; i < reposResponse.data.length; i += 1) {
         const { name } = reposResponse.data[i];
         const promise = axios
           .get(`${reposResponse.data[i].url}/commits`)
-          .then(commitsResponse => {
+          .then((commitsResponse) => {
             const object = {
               name,
               url: commitsResponse.data[0].html_url,
@@ -27,13 +27,18 @@ class recentCommits extends React.Component {
             };
             loopdata.push(object);
           })
-          .catch(error => {
+          .catch((error) => {
+            // eslint-disable-next-line no-console
             console.log(`Error ${error}`);
           });
         promises.push(promise);
       }
       Promise.all(promises).then(() => {
-        this.setState({ githubData: loopdata });
+        this.setState({
+          githubData: loopdata.sort((a, b) => {
+            return new Date(b.date) - new Date(a.date);
+          }),
+        });
       });
     });
   }
@@ -41,18 +46,15 @@ class recentCommits extends React.Component {
   render() {
     const { githubData } = this.state;
     const listitems = [];
-    const sortedlist = githubData.sort((a, b) => {
-      return new Date(b.date) - new Date(a.date);
-    });
-    if (sortedlist.length !== 0) {
+    if (githubData.length !== 0) {
       for (let i = 0; i < 5; i += 1) {
         listitems.push(
           <li>
             <a
               css={css`text-decoration: none; :visited {color: white}; :link {color white}; :hover {color: green}; font-size: 12px;`}
-              href={sortedlist[i].url}
+              href={githubData[i].url}
             >
-              {sortedlist[i].name}
+              {githubData[i].name}
             </a>
           </li>
         );
@@ -69,7 +71,7 @@ class recentCommits extends React.Component {
               padding: 0;
             `}
           >
-            {listitems}
+            {listitems.length > 0 ? listitems : <li>Loading...</li>}
           </ul>
         </nav>
       </div>

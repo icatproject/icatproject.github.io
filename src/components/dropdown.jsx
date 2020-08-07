@@ -214,7 +214,7 @@ const DropdownQueryContainer = ({ directoryName, menuExpanded }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />
     )}
   />

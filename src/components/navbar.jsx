@@ -25,7 +25,7 @@ class Navbar extends React.Component {
   }
 
   handleClick() {
-    this.setState(currentState => ({ expanded: !currentState.expanded }));
+    this.setState((currentState) => ({ expanded: !currentState.expanded }));
   }
 
   render() {
@@ -72,6 +72,7 @@ class Navbar extends React.Component {
           onClick={this.handleClick}
           type="button"
           aria-haspopup="true"
+          aria-expanded={expanded}
           css={css`
             border: none;
             background: none;
@@ -111,7 +112,6 @@ class Navbar extends React.Component {
               width: 100%;
             }
           `}
-          aria-expanded={expanded}
           aria-label="main-menu"
           id="main-menu"
         >
@@ -145,7 +145,7 @@ export default () => (
         }
       }
     `}
-    render={data => <Navbar data={data} />}
+    render={(data) => <Navbar data={data} />}
   />
 );
 
