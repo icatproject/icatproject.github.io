@@ -8,6 +8,12 @@ module.exports = {
     ICAT is in use at some of the world's largest scientific facilities enabling access to millions of scientific results. The software is free & open-source and has been developed & maintained by an international collaboration for over 10 years.`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.jsx`),
+      },
+    },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
@@ -63,20 +69,17 @@ module.exports = {
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
           MarkdownRemark: {
-            title: node => node.frontmatter.title,
-            content: node => node.rawMarkdownBody,
-            slug: node => node.fields.slug,
-            excerpt: node => {
+            title: (node) => node.frontmatter.title,
+            content: (node) => node.rawMarkdownBody,
+            slug: (node) => node.fields.slug,
+            excerpt: (node) => {
               const excerptLength = 55;
               let excerpt = '';
               const tree = remark().parse(node.rawMarkdownBody);
-              visit(tree, 'text', treeNode => {
+              visit(tree, 'text', (treeNode) => {
                 excerpt += `${treeNode.value} `;
               });
-              return `${excerpt
-                .split(' ')
-                .slice(0, excerptLength)
-                .join(' ')} ...`;
+              return `${excerpt.split(' ').slice(0, excerptLength).join(' ')} ...`;
             },
           },
         },

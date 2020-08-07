@@ -2,13 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { css } from '@emotion/core';
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const DefaultTemplate = ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <Layout>
+    <>
       <SEO title={post.frontmatter.title} keywords={[`ICAT`]} />
       <h1
         css={css`
@@ -21,7 +20,7 @@ const DefaultTemplate = ({ data }) => {
       </h1>
       {/* eslint-disable-next-line react/no-danger */}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </Layout>
+    </>
   );
 };
 

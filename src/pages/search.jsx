@@ -4,7 +4,6 @@ import { graphql, Link } from 'gatsby';
 import { css } from '@emotion/core';
 import { Index } from 'elasticlunr';
 import queryString from 'query-string';
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 export default class SearchPage extends React.Component {
@@ -58,7 +57,7 @@ export default class SearchPage extends React.Component {
   render() {
     const { query, results } = this.state;
     return (
-      <Layout>
+      <>
         <SEO title="Search" keywords={[`search`, `ICAT`]} />
         <h1>{`Search Results for: ${query}`}</h1>
         {results.map((page) => (
@@ -86,7 +85,7 @@ export default class SearchPage extends React.Component {
             </p>
           </article>
         ))}
-      </Layout>
+      </>
     );
   }
 }
