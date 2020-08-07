@@ -38,29 +38,6 @@ const RecentCommits = ({ styles: { ulStyle, liStyle, linkStyle, headerStyle } })
     });
   }, []);
 
-  const listitems = [];
-  if (githubData.length !== 0) {
-    for (let i = 0; i < 5; i += 1) {
-      listitems.push(
-        <li
-          css={css`
-            ${liStyle}
-          `}
-          key={githubData[i].name}
-        >
-          <a
-            css={css`
-              ${linkStyle}
-            `}
-            href={githubData[i].url}
-          >
-            {githubData[i].name}
-          </a>
-        </li>
-      );
-    }
-  }
-
   return (
     <div>
       <nav aria-label="recent commits">
@@ -76,8 +53,24 @@ const RecentCommits = ({ styles: { ulStyle, liStyle, linkStyle, headerStyle } })
             ${ulStyle}
           `}
         >
-          {listitems.length > 0 ? (
-            listitems
+          {githubData.length > 0 ? (
+            githubData.slice(0, 5).map((data) => (
+              <li
+                css={css`
+                  ${liStyle}
+                `}
+                key={data.name}
+              >
+                <a
+                  css={css`
+                    ${linkStyle}
+                  `}
+                  href={data.url}
+                >
+                  {data.name}
+                </a>
+              </li>
+            ))
           ) : (
             <li
               css={css`
