@@ -8,34 +8,40 @@ const RecentCommits = ({ styles: { ulStyle, liStyle, linkStyle, headerStyle } })
 
   React.useEffect(() => {
     const loopdata = [];
-    axios.get('https://api.github.com/orgs/icatproject/repos').then((reposResponse) => {
-      const promises = [];
-      for (let i = 0; i < reposResponse.data.length; i += 1) {
-        const { name } = reposResponse.data[i];
-        const promise = axios
-          .get(`${reposResponse.data[i].url}/commits`)
-          .then((commitsResponse) => {
-            const object = {
-              name,
-              url: commitsResponse.data[0].html_url,
-              date: commitsResponse.data[0].commit.committer.date,
-            };
-            loopdata.push(object);
-          })
-          .catch((error) => {
-            // eslint-disable-next-line no-console
-            console.log(`Error ${error}`);
-          });
-        promises.push(promise);
-      }
-      Promise.all(promises).then(() => {
-        setGithubData(
-          loopdata.sort((a, b) => {
-            return new Date(b.date) - new Date(a.date);
-          })
-        );
+    axios
+      .get('https://api.github.com/orgs/icatproject/repos')
+      .then((reposResponse) => {
+        const promises = [];
+        for (let i = 0; i < reposResponse.data.length; i += 1) {
+          const { name } = reposResponse.data[i];
+          const promise = axios
+            .get(`${reposResponse.data[i].url}/commits`)
+            .then((commitsResponse) => {
+              const object = {
+                name,
+                url: commitsResponse.data[0].html_url,
+                date: commitsResponse.data[0].commit.committer.date,
+              };
+              loopdata.push(object);
+            })
+            .catch((error) => {
+              // eslint-disable-next-line no-console
+              console.log(`Error ${error}`);
+            });
+          promises.push(promise);
+        }
+        Promise.all(promises).then(() => {
+          setGithubData(
+            loopdata.sort((a, b) => {
+              return new Date(b.date) - new Date(a.date);
+            })
+          );
+        });
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(`Error ${error}`);
       });
-    });
   }, []);
 
   return (
