@@ -60,7 +60,12 @@ export const Sidebar = () => (
       >
         Search
       </h5>
-      <Searchbar id="sidebar-search" />
+      <Searchbar
+        id="sidebar-search"
+        inputCSS={css`
+          width: 90%;
+        `}
+      />
     </form>
     <RecentMeetings styles={{ linkStyle, liStyle, ulStyle, headerStyle }} />
     <nav aria-label="quick links">
