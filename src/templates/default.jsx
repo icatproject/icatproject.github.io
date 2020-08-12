@@ -8,7 +8,22 @@ const DefaultTemplate = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <>
-      <SEO title={post.frontmatter.title} keywords={[`ICAT`]} />
+      <SEO
+        title={post.frontmatter.title}
+        keywords={[
+          `ICAT`,
+          `ICAT data`,
+          `ICAT metadata`,
+          `ICAT catalogue`,
+          `ICAT catalog`,
+          `data catalogue`,
+          `data catalog`,
+          `metadata catalogue`,
+          `metadata catalog`,
+          `ICAT project`,
+          `ICAT software`,
+        ]}
+      />
       <h1
         css={css`
           font-weight: 300;

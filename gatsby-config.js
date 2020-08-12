@@ -3,9 +3,9 @@ const visit = require('unist-util-visit');
 
 module.exports = {
   siteMetadata: {
-    title: `ICAT`,
-    description: `The ICAT software takes data from large scientific facilities - such as particle accelerators - and catalogues and indexes it so scientists can find the data they need and share it with their team.
-    ICAT is in use at some of the world's largest scientific facilities enabling access to millions of scientific results. The software is free & open-source and has been developed & maintained by an international collaboration for over 10 years.`,
+    title: `ICAT Project`,
+    description: `The ICAT software takes data from large scientific facilities (e.g particle accelerators) - and catalogues and indexes it so scientists can find the data they need.`,
+    siteUrl: `https://icatproject.github.io`,
   },
   plugins: [
     {
@@ -60,6 +60,7 @@ module.exports = {
         display: `browser`,
       },
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
