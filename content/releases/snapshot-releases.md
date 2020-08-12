@@ -8,7 +8,8 @@ is a SNAPSHOT.  Correct links are listed below for each component for
 which a SNAPSHOT is available. "Yes" in the last column indicates that
 this is expected to be the last SNAPSHOT prior to release.
 
-| Component  | Snapshot | Distro                                                                                                                                                                       | Final? |
-| ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| topcat     | 2.4.2    | [ topcat-2.4.2-20190121.155810-1-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/topcat/2.4.2-SNAPSHOT/topcat-2.4.2-20190121.155810-1-distro.zip)             | yes    |
-| ids.server | 1.9.2    | [ ids.server-1.9.2-20190122.133410-1-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/ids.server/1.9.2-SNAPSHOT/ids.server-1.9.2-20190122.133410-1-distro.zip) | no     |
+| Component        | Snapshot | Distro                                                                                                                                                                                         | Final? |
+| ---------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| icat.lucene      | 1.1.1    | [ icat.lucene-1.1.1-20200610.132602-1-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/icat.lucene/1.1.1-SNAPSHOT/icat.lucene-1.1.1-20200610.132602-1-distro.zip)                | yes    |
+| ids.storage_file | 1.4.3    | [ ids.storage_file-1.4.3-20200724.083003-1-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/ids.storage_file/1.4.3-SNAPSHOT/ids.storage_file-1.4.3-20200724.083003-1-distro.zip) | yes    |
+| ids.server       | 1.11.1   | [ ids.server-1.11.1-20200724.085739-1-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/ids.server/1.11.1-SNAPSHOT/ids.server-1.11.1-20200724.085739-1-distro.zip)                | yes    |
