@@ -1,4 +1,5 @@
 import React from 'react';
+import 'normalize.css';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { css } from '@emotion/core';

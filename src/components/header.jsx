@@ -43,7 +43,7 @@ class Header extends React.Component {
           <Link
             to="/"
             css={css`
-              margin: 0 1rem;
+              margin: 0.3rem 1rem;
               color: white;
               float: left;
               text-decoration: none;
@@ -72,6 +72,7 @@ class Header extends React.Component {
             color: white;
             line-height: 2.5rem;
             width: 2.5rem;
+            padding: 0;
           `}
           onClick={this.toggleSearch}
           aria-label="search"
