@@ -162,7 +162,7 @@ RAL.**
     in Europe for large facilities
   - It might be worth to discuss internally in the ICAT’s collaboration
     and **agree** **what we might expect of a common API for metadata
-    catalogues** .
+    catalogues**.
   - I imagine that it is also directly connected to EXPANDS (btw any new
     about the funding?)
 
@@ -188,7 +188,7 @@ ICAT-Plus and SciCat APIs as a starting point. Concerned that
 developments in PANOSC may not be ready in time to influence the new
 ICAT Rest API.
 
-**ACTION** : SP to send a link to the SciCat schema to the list.
+**ACTION**: SP to send a link to the SciCat schema to the list.
 
 RK: Need more information from PANOSC on what is the scope and
 technology in use.
@@ -209,7 +209,7 @@ SP: Covered in Steve’s [slide
 (no. 5)](https://icatproject.org/wp-content/uploads/2017/12/ICAT_F2F_2017_Ideas_Future_Direction.pdf#5)
 from the Face to face – but not yet implemented
 
-George: Study entity in the current schema is mostly interchangable with
+George: Study entity in the current schema is mostly interchangeable with
 proposed concept of proposal.
 
 Rolf: HZB only mints DOIs for publications, not data itself. Believes
@@ -217,7 +217,7 @@ that it is not possible to properly attribute credit for a dataset.
 Associates a PID with the data rather than a DOI, no metadata needs to
 be provided.
 
-**ACTION** : AM to investigate whether Study Entity (with, or without
+**ACTION**: AM to investigate whether Study Entity (with, or without
 additional properties) is sufficient to model the relationship he needs.
 
 **Discussion ended as we ran out of time.**

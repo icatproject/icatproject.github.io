@@ -93,10 +93,10 @@ SR – Diamond uses datafile and not dataset level storage
 
 SP – Scans table in TopCAT directly for downloads marked as Globus, and
 ignores HTTPS. Files are copied from tape to StorageD, then copied to
-IDS main storage, then copied into seperate Globus download area
+IDS main storage, then copied into separate Globus download area
 
 SR – google group mailing issue about copying data might seem similar,
-but believe Diamond issue is seperate
+but believe Diamond issue is separate
 
 Andy – tape storage managers want to reduce copies to only 1 copy rather
 than 3
@@ -121,7 +121,7 @@ triggers restore, reads ZIP from archive and restores to main.
 SP – can storage system unzip to main behind IDS’s back? IDS checks if
 it is on disk first, before it goes to archive and if it’s available it
 can use it. If ids-plugin isn’t responsible for restoring, and a
-seperate system unzips?
+separate system unzips?
 
 RK – would need to talk directly to tape storage, but then would need to
 code all backends. No direct communication between IDS-server and
@@ -151,7 +151,7 @@ RK’s student has solution to get logging in plugins?
 
 RK – You can use logging in the plugins, using log4j, one caveat: you
 need to provide a logfile config that shadows logfile from IDS-server.
-Inconvinient because logging for IDS-server is in plugin, but it works.
+Inconvenient because logging for IDS-server is in plugin, but it works.
 
 SP – where is this fix recorded?
 
@@ -162,7 +162,7 @@ be a good idea to look at logging now to save multiple recompilations
 
 RK – away for next 2 weeks, but after may provide information on how to
 modify plugins delete should not throw exception then file to delete
-does not exist additonal call lock. Suggest adding these things to
+does not exist additional call lock. Suggest adding these things to
 archive storage, otherwise need to add dummy method
 
 ### Moving instead of copying in Diamond
@@ -171,8 +171,8 @@ CP – Manually deleting data from IDS, response from RK that this isn’t a
 good idea. Want to move data from IDS cache
 
 SP – on globus IDS files are restored from archive to main like normal
-IDS, these files are then copied to seperate Globus area. Can we just
-move them instead of copying? Problem: 2 requests fo same file, IDS
+IDS, these files are then copied to separate Globus area. Can we just
+move them instead of copying? Problem: 2 requests for same file, IDS
 thinks it’s there for second file but file has been moved by request for
 first file
 
@@ -183,7 +183,7 @@ restore things twice. Can you not make a hard link?
 Silvia – Is it possible to change permissions in main storage area so
 users can access?
 
-SP – Globus has it’s own user, don’t know how this will work with
+SP – Globus has its own user, don’t know how this will work with
 permissions, but hard link might work
 
 RK – hard link will only work if both areas are on same file system
@@ -203,7 +203,7 @@ Silvia – hard link might be useful for multiple users case
 
 RK – you can make hardlinks for file to users area, when IDS removes
 file from main storage this will also remove hard links. Still have to
-check that permissions are seperate between hardlinks and not shared.
+check that permissions are separate between hardlinks and not shared.
 
 ### Dataset level issue
 
@@ -230,7 +230,7 @@ AM: we like that the location has a record of where it was
 
 RK: location is controlled by IDS, if it’s not then IDS is unstable
 
-SP: is it true that to accomodate RK’s change, you need to scan all
+SP: is it true that to accommodate RK’s change, you need to scan all
 files to check that they match what IDS expects – this is a big job
 
 AM: this isn’t too much of a worry, the worry is removing location that
@@ -263,4 +263,4 @@ dataset storage.
 AM: might be possible to use own field/parameter to record the previous
 location, then location can be nulled
 
-SP: look at how ingest works and look for inconsitency, look for skips
+SP: look at how ingest works and look for inconsistency, look for skips
