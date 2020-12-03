@@ -34,7 +34,7 @@ class Header extends React.Component {
           position: fixed;
           z-index: 5;
           height: 2.5rem;
-          @media only screen and (max-width: 600px) {
+          @media only screen and (max-width: 768px) {
             position: absolute;
           }
         `}
@@ -43,7 +43,7 @@ class Header extends React.Component {
           <Link
             to="/"
             css={css`
-              margin: 0 1rem;
+              margin: 0.3rem 1rem;
               color: white;
               float: left;
               text-decoration: none;
@@ -62,7 +62,7 @@ class Header extends React.Component {
             &:focus {
               background-color: #41a62a;
             }
-            @media only screen and (max-width: 600px) {
+            @media only screen and (max-width: 768px) {
               margin-right: 0;
             }
             border: none;
@@ -72,6 +72,7 @@ class Header extends React.Component {
             color: white;
             line-height: 2.5rem;
             width: 2.5rem;
+            padding: 0;
           `}
           onClick={this.toggleSearch}
           aria-label="search"
@@ -92,7 +93,7 @@ class Header extends React.Component {
               left: 185px;
               right: 0;
               background-color: #41a62a;
-              @media only screen and (max-width: 600px) {
+              @media only screen and (max-width: 768px) {
                 left: 0;
               }
             `}
@@ -104,7 +105,7 @@ class Header extends React.Component {
                 e.preventDefault();
               }}
               css={css`
-                @media only screen and (min-width: 600px) {
+                @media only screen and (min-width: 768px) {
                   float: right;
                 }
                 padding: 0.5rem 1rem;
@@ -114,7 +115,7 @@ class Header extends React.Component {
                 id="header-search"
                 inputCSS={css`
                   width: 350px;
-                  @media only screen and (max-width: 600px) {
+                  @media only screen and (max-width: 768px) {
                     width: 100%;
                   }
                 `}

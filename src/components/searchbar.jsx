@@ -46,9 +46,9 @@ export default class Searchbar extends React.Component {
 
 Searchbar.propTypes = {
   id: PropTypes.string.isRequired,
-  inputCSS: PropTypes.string,
+  inputCSS: PropTypes.shape({ styles: PropTypes.string }),
 };
 
 Searchbar.defaultProps = {
-  inputCSS: '',
+  inputCSS: { name: 'searchbar', styles: '' },
 };

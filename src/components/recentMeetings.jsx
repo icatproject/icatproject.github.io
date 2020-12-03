@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 
-const RecentMeetings = ({ styles: { ulStyle, liStyle, linkStyle } }) => (
+const RecentMeetings = ({ styles: { ulStyle, liStyle, linkStyle, headerStyle } }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -33,7 +33,13 @@ const RecentMeetings = ({ styles: { ulStyle, liStyle, linkStyle } }) => (
     `}
     render={(data) => (
       <nav aria-label="recent meetings">
-        <h5>Recent Meetings</h5>
+        <h5
+          css={css`
+            ${headerStyle}
+          `}
+        >
+          Recent Meetings
+        </h5>
         <ul
           css={css`
             ${ulStyle}
@@ -66,9 +72,10 @@ export default RecentMeetings;
 
 RecentMeetings.propTypes = {
   styles: PropTypes.shape({
-    liStyle: PropTypes.objectOf(PropTypes.string).isRequired,
-    ulStyle: PropTypes.objectOf(PropTypes.string).isRequired,
-    linkStyle: PropTypes.objectOf(PropTypes.string).isRequired,
+    liStyle: PropTypes.shape({ styles: PropTypes.string }).isRequired,
+    ulStyle: PropTypes.shape({ styles: PropTypes.string }).isRequired,
+    linkStyle: PropTypes.shape({ styles: PropTypes.string }).isRequired,
+    headerStyle: PropTypes.shape({ styles: PropTypes.string }).isRequired,
   }),
 };
 
@@ -77,5 +84,6 @@ RecentMeetings.defaultProps = {
     liStyle: {},
     ulStyle: {},
     linkStyle: {},
+    headerStyle: {},
   },
 };

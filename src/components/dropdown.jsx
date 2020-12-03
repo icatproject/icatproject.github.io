@@ -17,7 +17,7 @@ class Dropdown extends React.Component {
   }
 
   componentDidMount() {
-    const mediaQuery = window.matchMedia('(max-width: 600px)');
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
     this.updateMediaQuery(mediaQuery);
     mediaQuery.addEventListener('change', this.updateMediaQuery);
   }
@@ -46,7 +46,7 @@ class Dropdown extends React.Component {
         <li
           key={node.id}
           css={css`
-            @media (min-width: 600px) {
+            @media (min-width: 768px) {
               line-height: 12px;
             }
             line-height: 6px;
@@ -64,13 +64,13 @@ class Dropdown extends React.Component {
               padding: 12px 0.5rem;
               font-size: 11px;
               text-transform: uppercase;
-              @media (min-width: 600px) {
+              @media (min-width: 768px) {
                 &:focus,
                 &:hover {
                   background-color: #41a62a;
                 }
               }
-              @media (max-width: 600px) {
+              @media (max-width: 768px) {
                 padding: 0.5rem 2rem;
                 text-align: left;
                 &:hover,
@@ -107,7 +107,7 @@ class Dropdown extends React.Component {
         css={css`
           float: left;
           background-color: black;
-          @media (min-width: 600px) {
+          @media (min-width: 768px) {
             &:hover,
             &:focus {
               background-color: #24890d;
@@ -115,7 +115,7 @@ class Dropdown extends React.Component {
             margin-right: 1px;
             line-height: 2.5rem;
           }
-          @media (max-width: 600px) {
+          @media (max-width: 768px) {
             text-align: left;
             width: 100%;
             margin: 0;
@@ -136,13 +136,13 @@ class Dropdown extends React.Component {
             padding: 0 0.5rem;
             text-transform: uppercase;
             font-size: 11px;
-            @media (min-width: 600px) {
+            @media (min-width: 768px) {
               &:hover,
               &:focus {
                 background-color: #24890d;
               }
             }
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
               &:hover,
               &:focus {
                 color: #24890d;
@@ -161,7 +161,7 @@ class Dropdown extends React.Component {
             margin: 0;
             background-color: #24890d;
             position: absolute;
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
               background-color: black;
               position: static;
               display: block;

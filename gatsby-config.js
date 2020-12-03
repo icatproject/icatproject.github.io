@@ -3,11 +3,17 @@ const visit = require('unist-util-visit');
 
 module.exports = {
   siteMetadata: {
-    title: `ICAT`,
-    description: `The ICAT software takes data from large scientific facilities - such as particle accelerators - and catalogues and indexes it so scientists can find the data they need and share it with their team.
-    ICAT is in use at some of the world's largest scientific facilities enabling access to millions of scientific results. The software is free & open-source and has been developed & maintained by an international collaboration for over 10 years.`,
+    title: `ICAT Project`,
+    description: `The ICAT software takes data from large scientific facilities (e.g particle accelerators) - and catalogues and indexes it so scientists can find the data they need.`,
+    siteUrl: `https://icatproject.github.io`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.jsx`),
+      },
+    },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
@@ -54,6 +60,7 @@ module.exports = {
         display: `browser`,
       },
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
@@ -63,20 +70,17 @@ module.exports = {
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
           MarkdownRemark: {
-            title: node => node.frontmatter.title,
-            content: node => node.rawMarkdownBody,
-            slug: node => node.fields.slug,
-            excerpt: node => {
+            title: (node) => node.frontmatter.title,
+            content: (node) => node.rawMarkdownBody,
+            slug: (node) => node.fields.slug,
+            excerpt: (node) => {
               const excerptLength = 55;
               let excerpt = '';
               const tree = remark().parse(node.rawMarkdownBody);
-              visit(tree, 'text', treeNode => {
+              visit(tree, 'text', (treeNode) => {
                 excerpt += `${treeNode.value} `;
               });
-              return `${excerpt
-                .split(' ')
-                .slice(0, excerptLength)
-                .join(' ')} ...`;
+              return `${excerpt.split(' ').slice(0, excerptLength).join(' ')} ...`;
             },
           },
         },

@@ -2,14 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { css } from '@emotion/core';
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const DefaultTemplate = ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <Layout>
-      <SEO title={post.frontmatter.title} keywords={[`ICAT`]} />
+    <>
+      <SEO
+        title={post.frontmatter.title}
+        keywords={[
+          `ICAT`,
+          `ICAT data`,
+          `ICAT metadata`,
+          `ICAT catalogue`,
+          `ICAT catalog`,
+          `data catalogue`,
+          `data catalog`,
+          `metadata catalogue`,
+          `metadata catalog`,
+          `ICAT project`,
+          `ICAT software`,
+        ]}
+      />
       <h1
         css={css`
           font-weight: 300;
@@ -21,7 +35,7 @@ const DefaultTemplate = ({ data }) => {
       </h1>
       {/* eslint-disable-next-line react/no-danger */}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </Layout>
+    </>
   );
 };
 
