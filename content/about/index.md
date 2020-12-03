@@ -11,10 +11,10 @@ For a more detailed explanation of what ICAT does and the actors, entities and w
 
 ### Who uses ICAT?
 ICAT is used at many large scientific facilities. To find out how ICAT is supporting great science, see our case studies:
-- CLF
-- HZB
-- ISIS
-- OCTOPUS
+- [CLF](collaboration/facilities/clf/)
+- [HZB](collaboration/facilities/hzb)
+- [ISIS](collaboration/facilities/isis/)
+- [OCTOPUS](collaboration/facilities/octopus/)
 
 ### Who develops ICAT?
 ICAT is developed by an international collaboration. (TODO: list them/link to them). There are monthly meetings to discuss development, yearly face-to-face meetings and a steering committee which agrees the roadmap. To find out more, see our [Collaboration](/collaboration/) page.
