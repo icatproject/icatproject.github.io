@@ -72,7 +72,7 @@ space with agreed names.
 # The full schema
 
 The complete schema for each version of ICAT may be seen. For example
-[for 4.8.0](https://repo.icatproject.org/site/icat/server/4.8.0/schema.html).
+[for 4.10.0](https://repo.icatproject.org/site/icat/server/4.10.0/schema.html).
 This description of the schema is generated directly from the code. It
 omits five attributes which are carried by all entitites:
 

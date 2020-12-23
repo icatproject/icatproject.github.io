@@ -12,7 +12,7 @@ Using these web pages
 
 [ICAT Server Rest Calls (4.8.0)](https://repo.icatproject.org/site/icat/server/4.8.0/miredot/index.html) – this shows the actual Rest interface offered by the server and is therefore language independent
 
-[Current (4.8.0) schema](https://repo.icatproject.org/site/icat/server/4.8.0/schema.html)
+[Current (4.10.0) schema](https://repo.icatproject.org/site/icat/server/4.10.0/schema.html)
 
 [icatgroup](http://groups.google.com/group/icatgroup) to which those interested in ICAT should subscribe.
 
