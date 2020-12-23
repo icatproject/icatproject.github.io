@@ -6,11 +6,9 @@ Each components of the ICAT project has its own GitHub repository within
 an [icatproject organisation](https://github.com/icatproject) with the
 code, a small Wiki and the Issue (bug/ feature request) List for that
 component. If you simply want to install components then go to
-[Installation](/installation/ "Installation"). To
-get an overview of what is happening across the repositories take a look
-at [waffle.io](https://waffle.io/icatproject/icat.server)
+[Installation](/installation/ "Installation").
 
-![ICAT Components](/about/ICAT-Components.png "ICAT Components")
+![ICAT Components](../about/ICAT-Components.png "ICAT Components")
 
 - ICAT server and client : the metadata catalogue provides  a SOAP web
   service interface to the underlying database with an easy to use
