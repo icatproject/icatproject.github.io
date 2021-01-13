@@ -101,6 +101,7 @@ executeGood("asadmin -W " + tfile + " --user admin create-domain --savelogin " +
 executeGood("asadmin start-domain " + domain)
 executeGood("asadmin enable-secure-admin")
 
+# Set the maximum heap size (default is 512MB)
 if type == "%":
     if platform.system() == "Windows":
         abort("% memory calculation for Java heap size is not yet supported on windows")
@@ -113,6 +114,8 @@ for line in executeGood("asadmin list-jvm-options").splitlines():
         executeGood("asadmin delete-jvm-options " + line.strip())
 executeGood("asadmin create-jvm-options -Xmx" + mem)
 
+# Set the out-of-memory handler to kill the JVM
+# With Java 8, -XX:+ExitOnOutOfMemoryError can be used
 if platform.system() == "Windows": 
     cmd = "taskkill /F /PID %p"
 else:
@@ -120,10 +123,19 @@ else:
 
 dq = '\\"'
 executeGood("asadmin create-jvm-options '-XX\:OnOutOfMemoryError=" + dq + cmd + dq +"'")
+
 executeGood("asadmin stop-domain --kill " + domain)
 executeGood("asadmin start-domain " + domain)
+
+# Enable access logs
 executeGood('asadmin set server.http-service.access-log.format="common"')
 executeGood('asadmin set server.http-service.access-logging-enabled=true')
+
+# Increase the thread pool size to 128 (default is 5)
 executeGood('asadmin set server.thread-pools.thread-pool.http-thread-pool.max-thread-pool-size=128')
+
+# Disable the old (Glassfish 2) JNDI names for session beans and use the names defined in EJB 3.1. The old names can clash when there are multiple applications deployed.
 executeGood('asadmin set server.ejb-container.property.disable-nonportable-jndi-names="true"')
+
+# Change the read request timeout to infinite (default is 15 mins). This is required for prepareData nad getSize requests from Topcat to the IDS which can take a long time.
 executeGood('asadmin set configs.config.server-config.network-config.protocols.protocol.http-listener-2.http.request-timeout-seconds=-1')
