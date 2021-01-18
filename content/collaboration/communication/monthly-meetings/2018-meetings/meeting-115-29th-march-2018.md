@@ -144,11 +144,10 @@ searchable data linked to ICAT.
 
 # Ticket Review (SP)
 
-- Looking at tickets on https://waffle.io/icatproject/icat.server
-  - a ‘Kanban’-style display of the open issues in the Icatproject
-    Github repositories. There are 4 columns: Backlog (containing
-    most of the issues), Ready (currently empty), In Progress and
-    Done.
+- Looking at the Waffle.io 'Kanban'-style issue tracker which displays
+  the open issues in the Icatproject Github repositories. There are 4
+  columns: Backlog (containing most of the issues), Ready (currently
+  empty), In Progress and Done.
 - Running out of time so only reviewing issues in ‘In Progress’
 - ‘In Progress’ should mean the owner expects to report on it at next
   meeting.

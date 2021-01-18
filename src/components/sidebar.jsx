@@ -132,20 +132,6 @@ export const Sidebar = () => (
             css={css`
               ${linkStyle}
             `}
-            href="https://waffle.io/icatproject/icat.server"
-          >
-            Waffle.io dashboard
-          </a>
-        </li>
-        <li
-          css={css`
-            ${liStyle}
-          `}
-        >
-          <a
-            css={css`
-              ${linkStyle}
-            `}
             href="https://github.com/icatproject"
           >
             Github for icatproject
