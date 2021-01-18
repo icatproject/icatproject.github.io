@@ -6,13 +6,13 @@ This page exists to give direct access to a number of useful pages:
 
 Using these web pages
 
-[Java ICAT Client SOAP API (4.8.0)](https://repo.icatproject.org/site/icat/client/4.8.0/manual_soap.html)
+[Java ICAT Client SOAP API (4.10.0)](https://repo.icatproject.org/site/icat/client/4.10.0/manual_soap.html)
 
-[Java ICAT Client Rest API (4.8.0)](https://repo.icatproject.org/site/icat/client/4.8.0/apidocs/index.html?org/icatproject/icat/client/package-summary.html)
+[Java ICAT Client Rest API (4.10.0)](https://repo.icatproject.org/site/icat/client/4.10.0/apidocs/index.html?org/icatproject/icat/client/package-summary.html)
 
-[ICAT Server Rest Calls (4.8.0)](https://repo.icatproject.org/site/icat/server/4.8.0/miredot/index.html) – this shows the actual Rest interface offered by the server and is therefore language independent
+[ICAT Server Rest Calls (4.9.1)](https://repo.icatproject.org/site/icat/server/4.9.1/miredot/index.html) – this shows the actual Rest interface offered by the server and is therefore language independent
 
-[Current (4.8.0) schema](https://repo.icatproject.org/site/icat/server/4.8.0/schema.html)
+[Current (4.10.0) schema](https://repo.icatproject.org/site/icat/server/4.10.0/schema.html)
 
 [icatgroup](http://groups.google.com/group/icatgroup) to which those interested in ICAT should subscribe.
 
