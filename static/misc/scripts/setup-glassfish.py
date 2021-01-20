@@ -80,10 +80,6 @@ if len(args) == 3:
     password = args[2]
 else:
     password = getpass.getpass("Desired admin password: ")
-dummy, tfile = tempfile.mkstemp()
-a = open(tfile,"w")
-a.write("AS_ADMIN_PASSWORD=" + password)
-a.close()
 
 out = executeGood("asadmin list-domains")
 exists = False
@@ -97,7 +93,15 @@ if exists:
         executeGood("asadmin stop-domain --kill " + domain)
     executeGood("asadmin delete-domain " + domain)
 
-executeGood("asadmin -W " + tfile + " --user admin create-domain --savelogin " + domain)
+dummy, tfile = tempfile.mkstemp()
+try:
+    with open(tfile, "w") as a:
+        a.write("AS_ADMIN_PASSWORD=" + password)
+
+    executeGood("asadmin -W " + tfile + " --user admin create-domain --savelogin " + domain)
+finally:
+    os.remove(tfile)
+
 executeGood("asadmin start-domain " + domain)
 executeGood("asadmin enable-secure-admin")
 
