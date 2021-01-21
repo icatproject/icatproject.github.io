@@ -1,9 +1,12 @@
 #!/usr/bin/env python
+
+from __future__ import print_function
+
 import threading
 import platform
 import shlex
 import subprocess
-import StringIO
+import io
 import getpass
 import sys
 import os
@@ -11,18 +14,18 @@ import tempfile
 
 def execute(cmd):
         
-    print cmd
+    print(cmd)
     if platform.system() == "Windows": 
         cmd = cmd.split()
         proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     else:
         cmd = shlex.split(cmd)
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    stringOut = StringIO.StringIO()
+    stringOut = io.BytesIO()
 
     mstdout = Tee(proc.stdout, stringOut)
     mstdout.start()
-    stringErr = StringIO.StringIO()
+    stringErr = io.BytesIO()
     mstderr = Tee(proc.stderr, stringErr)
     mstderr.start()
     rc = proc.wait()
@@ -30,10 +33,10 @@ def execute(cmd):
     mstdout.join()
     mstderr.join()
 
-    out = stringOut.getvalue().strip()
+    out = stringOut.getvalue().decode().strip()
     stringOut.close()
 
-    err = stringErr.getvalue().strip()
+    err = stringErr.getvalue().decode().strip()
     stringErr.close()
 
     return out, err, rc
@@ -54,7 +57,7 @@ class Tee(threading.Thread):
 
 def abort(msg):
     """Print to stderr and stop with exit 1"""
-    print >> sys.stderr, msg, "\n"
+    print(msg + "\n", file=sys.stderr)
     sys.exit(1)
 
 def executeGood(cmd):
