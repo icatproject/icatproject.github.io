@@ -26,7 +26,8 @@ most of the components.
 
 Please follow the links below, consult the menus or use the search box.
 
-[Set of ICAT components\](/about/components-of-the-icat-project/ "Components of the ICAT project")[Useful
+[Set of ICAT components\
+](/about/components-of-the-icat-project/ "Components of the ICAT project")[Useful
 links](/about/useful-links/ "Useful Links")
 
 ## Citations
