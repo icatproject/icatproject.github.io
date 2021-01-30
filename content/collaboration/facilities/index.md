@@ -2,7 +2,7 @@
 title: Facilities
 ---
 
-# Facilities using the ICAT family
+# Facilities using the ICAT components
 
 - [CLF](/collaboration/facilities/clf/) STFC's
   Central Laser Facility
@@ -10,5 +10,3 @@ title: Facilities
   Berlin für Materialien und Energie
 - [ISIS](/collaboration/facilities/isis/) STFC's
   ISIS facility
-- [OCTOPUS](/collaboration/facilities/octopus/) laser
-  imaging: a part of STFC's Central Laser Facility
