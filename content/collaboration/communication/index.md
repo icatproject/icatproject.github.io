@@ -31,4 +31,3 @@ and the meetings for
 ## Face-to-face meetings
 
 See the [face-to-face meetings](/collaboration/communication/face-to-face-meetings) page for a list of all the face-to-face meetings.
-The last meeting was in [DLS in 2015](/collaboration/communication/face-to-face-meetings/dls-2015/ "DLS 2015").
