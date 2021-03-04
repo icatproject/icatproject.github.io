@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 
+# !!!!!!!!!! #
+#
+# The latest version of this file can be downloaded from
+# https://raw.githubusercontent.com/icatproject/icat.utils/master/src/main/scripts/setup-glassfish.py
+#
+# !!!!!!!!!! #
+
 from __future__ import print_function
 
 import threading
