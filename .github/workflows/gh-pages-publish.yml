@@ -1,7 +1,7 @@
 name: GitHub Pages Publish
 
 on:
-  pull_request:
+  push:
     branches:
       - gatsbyjs
 
@@ -11,9 +11,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v1
-      - name: Build site
+      - name: Build and publish site
         uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: master
-          skip-publish: true
