@@ -1,0 +1,22 @@
+name: GitHub Pages Publish
+
+on:
+  pull_request:
+  # By default, the pull_request event type is not triggered when a PR is merged into gatsbyjs
+  push:
+    branches:
+      - gatsbyjs
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v1
+      - name: Build and publish site
+        uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          # Publish the site only if merging into gatsbyjs branch
+          skip-publish: ${{ github.ref != 'refs/heads/gatsbyjs' }}
+          deploy-branch: master
