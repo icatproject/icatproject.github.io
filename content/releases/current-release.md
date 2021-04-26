@@ -16,15 +16,16 @@ user and developer documentation.
 - [authn.ldap](https://repo.icatproject.org/site/authn/ldap) -- 2.0.0
 - [authn.simple](https://repo.icatproject.org/site/authn/simple) --
   2.0.0
+- [authn.oidc](https://repo.icatproject.org/site/authn/oidc) -- 1.0.0
 - [icat.server](https://repo.icatproject.org/site/icat/server) -- 4.11.1
 - [icat.client](https://repo.icatproject.org/site/icat/client) -- 4.11.1
 - [icat.lucene](https://repo.icatproject.org/site/icat/lucene) -- 1.1.0
 - [icat.oaipmh](https://repo.icatproject.org/site/icat/oaipmh) -- 1.1.1
-- [ids.server](https://repo.icatproject.org/site/ids/server) -- 1.11.0
+- [ids.server](https://repo.icatproject.org/site/ids/server) -- 1.12.0
 - [ids.client](https://repo.icatproject.org/site/ids/client) -- 1.3.0
 - [ids.plugin](https://repo.icatproject.org/site/ids/plugin) -- 1.5.0
 - [ids.storage_file](https://repo.icatproject.org/site/ids/storage_file) --
-  1.4.2
+  1.4.3
 - [topcat](https://repo.icatproject.org/site/topcat) -- 2.4.8
 
 ## Issues with the current releases
