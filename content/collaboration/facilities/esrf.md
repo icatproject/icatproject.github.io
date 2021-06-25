@@ -1,5 +1,5 @@
 ---
-title: HZB
+title: ESRF
 ---
 
 The ESRF - The European Synchrotron Radiation Facility - is the most intense source of synchrotron-generated light, producing X-rays 100 billion times brighter than the X-rays used in hospitals. These X-rays, endowed with exceptional properties, are produced at the ESRF by the high energy electrons that race around the storage ring, a circular tunnel measuring 844 metres in circumference.
