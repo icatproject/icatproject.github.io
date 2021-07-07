@@ -5,7 +5,7 @@ title: The ICAT Project
 The ICAT project provides a metadata catalogue and related components to
 support experimental data management for large-scale facilities, linking all aspects of the
 research lifecycle from proposal through to data and articles publication. ICAT includes a
-number of [components](/about/components), the principal ones being:
+number of [components](/about/components-of-the-icat-project), the principal ones being:
 
 - **ICAT**: the metadata catalogue itself, which provides SOAP and RESTful
   web service interfaces to an underlying database via an easy to use
