@@ -9,7 +9,7 @@ Thanks to the brilliance and quality of its X-rays, the ESRF functions like a "s
 
 Thirty years ago the ESRF made history as the world’s first third-generation synchrotron light source. Today, the ESRF continues to lead the way with the Extremely Brilliant Source (EBS), a brand-new generation of high-energy synchrotron, improving X-ray performances of brilliance and coherence once again by a factor of 100. This new concept, based on innovative technology, paves the way for a new standard of synchrotrons around the world. ESRF-EBS will contribute to tackling global challenges in key areas such as health, environment, energy and new industrial materials, and to unveiling hidden secrets of our natural and cultural heritage through the non-destructive investigation of precious artifacts and palaeontological treasures.
 
-![ESRF](/esrf.jpg "The European Synchrotron")
+![ESRF](./esrf.jpeg)
 
 Since 2014, ICAT has been deployed and most of the ESRF beamlines are today storing their data and metadata in ICAT. It has been proven to be a reliable and mature software that allows it to be used for all the experiments.
 
