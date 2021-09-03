@@ -17,10 +17,7 @@ In addition to the use of ICAT as a metadata catalogue, new features like the el
 
 The E-Dataportal is a modern front-end used at the ESRF and it is written in React. It uses a newly developed API called ICAT+ to retrieve data. In order to make it easier for users, the approach has been to put together in the same application all tools that the users will need when performing experiments at ESRF: sample tracking, metadata catalogue and electronic logbook.
 
-
 <img src="esrf_tomato.jpeg" alt="The E-Data Portal shows an experiment performed at the ESRF" width="600"/>
-
-
 
 ICAT+ is a set of RESTful webservices implemented in nodeJS. ICAT+ access to the metadata catalog data via ICAT API and has also access to a Mongo database where data of the logbook and the sample tracking are stored.  
 
@@ -32,4 +29,7 @@ The electronic logbook allows to create both manual and automatic annotations on
 
 <img src="esrf_logbook.jpeg" alt="Example of the electronic logbook in a real experiment" width="600"/>
 
+Besides these tools used by the scientific community ICAT+ makes use of Elastic Search to improve the searchs as well as gather statistics that have been proven extremely useful for administrators.
 
+<img src="esrf_statistics.png" alt="Real time statistics on the data" width="300"/>
+<img src="esrf_statistics_2.png" alt="Real time statistics on the data" width="379"/>
