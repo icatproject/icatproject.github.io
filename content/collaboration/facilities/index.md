@@ -6,9 +6,9 @@ There are multiple large-scale research facilities that rely on the ICAT ecosyst
 
 Some of these facilities are:
 
-- [CLF](/collaboration/facilities/clf/) STFC's Central Laser Facility
-- [ESRF](/collaboration/facilities/esrf/) European Synchrotron Radiation Facility
-- [HZB](/collaboration/facilities/hzb/) The Helmholtz-Zentrum Berlin für Materialien und Energie
-- [ISIS](/collaboration/facilities/isis/) STFC's ISIS facility
+- [STFC's Central Laser Facility (CLF)](/collaboration/facilities/clf/) 
+- [European Synchrotron Radiation Facility (ESRF)](/collaboration/facilities/esrf/)
+- [The Helmholtz-Zentrum Berlin für Materialien und Energie (HZB)](/collaboration/facilities/hzb/)
+- [STFC's ISIS facility (ISIS)](/collaboration/facilities/isis/)
 
 You can explore how each of the facilities uses ICAT by accessing their description page above.
