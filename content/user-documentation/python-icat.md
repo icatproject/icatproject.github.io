@@ -9,7 +9,7 @@ features.
 
 ## Documentation
 
-See the [online documentation](https://icatproject.org/misc/python-icat/doc/0.14.1/).
+See the [online documentation](https://python-icat.readthedocs.io/).
 
 ## System requirements
 
