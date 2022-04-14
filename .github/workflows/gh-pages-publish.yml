@@ -19,4 +19,4 @@ jobs:
           access-token: x-access-token:${{ secrets.GITHUB_TOKEN }}
           # Publish the site only if merging into gatsbyjs branch
           skip-publish: ${{ github.ref != 'refs/heads/gatsbyjs' }}
-          deploy-branch: master
+          deploy-branch: main
