@@ -1,11 +1,13 @@
 ---
-title: Collaboration
+title: The ICAT Collaboration
 ---
 
-ICAT is an open source project.  We welcome collaborators.
+ICAT is an open-source project that is developed as part of a collaboration. Do get in touch if you would like to use the ICAT software components and we will help navigate how to use the different components. We welcome new collaborators!
 
-[Communication](/collaboration/communication/ "Communication")
+In the pages linked below, you can find more information about the way to contact the ICAT collaboration and how to join our meetings, guidelines about the different componetns and which large-scale facilities are using ICAT:
 
-[Component Guidelines](/collaboration/component-guidelines/ "Component Guidelines")
+- [Communication](/collaboration/communication/ "Communication")
 
-[Facilities using ICAT](/collaboration/facilities/)
+- [Component Guidelines](/collaboration/component-guidelines/ "Component Guidelines")
+
+- [Facilities using ICAT](/collaboration/facilities/)
