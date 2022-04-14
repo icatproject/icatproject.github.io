@@ -12,7 +12,7 @@ The `static` folder contains other resources such as PDFs. These are copied auto
 
 To develop locally, [install GatsbyJS](https://www.gatsbyjs.org/tutorial/part-zero/) and clone this branch (and change into its directory) and then run `npm install` to install all the needed dependencies and then run `gatsby develop`. This will build the site at `http://localhost:8000`
 
-To deploy manually, run `npm run deploy`. This will automatically build and publish the build to the `master` branch. However, this repository has `TravisCI` set up so that when changes are detected on the `gatsbyjs` branch the site is deployed after it is built, so manual deployment would rarely be needed.
+To deploy manually, run `npm run deploy`. This will automatically build and publish the build to the `main` branch. However, this repository has `TravisCI` set up so that when changes are detected on the `gatsbyjs` branch the site is deployed after it is built, so manual deployment would rarely be needed.
 
 ## Developer notes
 
