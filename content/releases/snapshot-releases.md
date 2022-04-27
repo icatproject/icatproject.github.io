@@ -10,4 +10,4 @@ this is expected to be the last SNAPSHOT prior to release.
 
 | Component        | Snapshot | Distro                                                                                                                                                                                         | Final? |
 | ---------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| icat.lucene      | 1.1.1    | [ icat.lucene-1.1.1-20200610.132602-1-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/icat.lucene/1.1.1-SNAPSHOT/icat.lucene-1.1.1-20200610.132602-1-distro.zip)                | yes    |
+| topcat      | 2.4.9    | [ topcat-2.4.9-20220427.112840-1-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/topcat/2.4.9-SNAPSHOT/topcat-2.4.9-20220427.112840-1-distro.zip)                | yes    |
