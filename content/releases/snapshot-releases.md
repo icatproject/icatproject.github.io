@@ -10,4 +10,4 @@ this is expected to be the last SNAPSHOT prior to release.
 
 | Component        | Snapshot | Distro                                                                                                                                                                                         | Final? |
 | ---------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| topcat      | 2.4.9    | [ topcat-2.4.9-20220427.112840-1-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/topcat/2.4.9-SNAPSHOT/topcat-2.4.9-20220427.112840-1-distro.zip)                | yes    |
+| topcat      | 2.4.9    | [topcat-2.4.9-20220519.083152-2-distro.zip](https://repo.icatproject.org/repo/org/icatproject/topcat/2.4.9-SNAPSHOT/topcat-2.4.9-20220519.083152-2-distro.zip)               | yes    |
