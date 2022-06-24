@@ -11,5 +11,6 @@ Some of these facilities are:
 - [The Helmholtz-Zentrum Berlin für Materialien und Energie (HZB)](/collaboration/facilities/hzb/)
 - [STFC's ISIS facility (ISIS)](/collaboration/facilities/isis/)
 - [ALBA Synchrotron Light Source (ALBA)](/collaboration/facilities/alba/)
+- [Diamond Light Source (DLS)](https://diamond.ac.uk/)
 
 You can explore how each of the facilities uses ICAT by accessing their description page above.
