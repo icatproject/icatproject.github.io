@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v1
-      - name: Build and publish site
+      - name: ${{ github.ref != 'refs/heads/gatsbyjs' && 'Build site' || 'Build and publish site' }}
         uses: enriikke/gatsby-gh-pages-action@v2
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          access-token: x-access-token:${{ secrets.GITHUB_TOKEN }}
           # Publish the site only if merging into gatsbyjs branch
           skip-publish: ${{ github.ref != 'refs/heads/gatsbyjs' }}
           deploy-branch: master
