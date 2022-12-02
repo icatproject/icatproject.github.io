@@ -21,7 +21,7 @@ Instruments. These are represented by an intermediate entity
 instrument and to one user. These  intermediate entities are not shown
 on the diagram.
 
-![Schema overview](/ICAT-4.3-Schema.png)
+![Schema overview](/ICAT-5-Schema.png)
 
 A Facility can be seen as a set of Instruments. Each Facility supports a
 number of Investigations where there may be a one-to one correspondence
