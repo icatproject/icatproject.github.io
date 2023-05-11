@@ -18,7 +18,7 @@ See also the [indico site](https://events.hifis.net/event/778/).
 
 - [Dataset Parameters at HZB](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/2.1-Krahl-Dataset_Parameters_HZB.pdf) (Rolf Krahl)
 - [Experiment Parameters at the ESRF](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/2.2-Bodin-Experiment_Parameters_ESRF.pdf) (Marjolaine Bodin)
-- Parameters and Samples (Steve Collins)
+- [ICAT Metadata at Diamond](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/2.3-Collins-ICAT_Metadata_Diamond.pdf) (Steve Collins)
 - Samples at ISIS and Diamond (Kevin Phipps, no slides)
 
 ### Performance Issues (Wednesday, 3rd May, 13:00)
@@ -34,7 +34,7 @@ See also the [indico site](https://events.hifis.net/event/778/).
 
 ### Community Engagement (Wednesday, 3rd May, 16:30)
 
-- Community Engagement (Andy Gotz)
+- [ICAT Community Life](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/5.1-Götz-ICAT_Community_Life.pdf) (Andy Götz)
 
 ### ICAT Roadmap (Thursday, 4th May, 09:00)
 
