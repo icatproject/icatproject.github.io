@@ -11,7 +11,7 @@ See also the [indico site](https://events.hifis.net/event/778/).
 ### Processed Data (Wednesday, 3rd May, 09:30)
 
 - [DOI and User Upload](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/1.1-Kemp-DOI_and_User_Upload.pdf) (Alexander Kemp)
-- Processed Data at ESRF (Alex de Maria)
+- [Processed Data at ESRF](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/1.2-de-Maria-Processed_Data.pdf) (Alex de Maria)
 - PIDs for Raw Data and Data Publicatins at HZB (Rolf Krahl, no slides)
 
 ### Metadata in ICAT (Experiment Parameters, Samples) (Wednesday, 3rd May, 11:00)
@@ -30,7 +30,7 @@ See also the [indico site](https://events.hifis.net/event/778/).
 ### Front-End (Wednesday, 3rd May, 14:30)
 
 - [DataGateway](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/4.1-Davies-DataGateway.pdf) (Louise Davies)
-- ESRF Datahub (Alex de Maria)
+- [ESRF Datahub](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/4.2-de-Maria-ESRF_Datahub.pdf) (Alex de Maria)
 
 ### Community Engagement (Wednesday, 3rd May, 16:30)
 
