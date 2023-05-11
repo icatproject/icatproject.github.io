@@ -12,7 +12,7 @@ See also the [indico site](https://events.hifis.net/event/778/).
 
 - [DOI and User Upload](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/1.1-Kemp-DOI_and_User_Upload.pdf) (Alexander Kemp)
 - [Processed Data at ESRF](/pdf/collaboration/communication/face-to-face-meetings/2023-berlin/1.2-de-Maria-Processed_Data.pdf) (Alex de Maria)
-- PIDs for Raw Data and Data Publicatins at HZB (Rolf Krahl, no slides)
+- PIDs for Raw Data and Data Publications at HZB (Rolf Krahl, no slides)
 
 ### Metadata in ICAT (Experiment Parameters, Samples) (Wednesday, 3rd May, 11:00)
 
