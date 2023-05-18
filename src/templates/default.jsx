@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { css } from '@emotion/core';
 import SEO from '../components/seo';
 
-const DefaultTemplate = ({ data }) => {
+function DefaultTemplate({ data }) {
   const post = data.markdownRemark;
   return (
     <>
@@ -37,7 +37,7 @@ const DefaultTemplate = ({ data }) => {
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </>
   );
-};
+}
 
 export default DefaultTemplate;
 

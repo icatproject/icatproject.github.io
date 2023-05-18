@@ -13,7 +13,6 @@ class Dropdown extends React.Component {
     this.handleFocus = this.handleFocus.bind(this);
     this.renderListItem = this.renderListItem.bind(this);
     this.updateMediaQuery = this.updateMediaQuery.bind(this);
-    this.mediaQuery = false;
   }
 
   componentDidMount() {
@@ -22,20 +21,20 @@ class Dropdown extends React.Component {
     mediaQuery.addEventListener('change', this.updateMediaQuery);
   }
 
-  updateMediaQuery(mediaQuery) {
-    if (mediaQuery.matches) {
-      this.setState({ mediaQuery: true });
-    } else {
-      this.setState({ mediaQuery: false });
-    }
-  }
-
   handleBlur() {
     this.setState({ expanded: false });
   }
 
   handleFocus() {
     this.setState({ expanded: true });
+  }
+
+  updateMediaQuery(mediaQuery) {
+    if (mediaQuery.matches) {
+      this.setState({ mediaQuery: true });
+    } else {
+      this.setState({ mediaQuery: false });
+    }
   }
 
   renderListItem(node, shouldRender) {
@@ -194,31 +193,33 @@ class Dropdown extends React.Component {
   }
 }
 
-const DropdownQueryContainer = ({ directoryName, menuExpanded }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___title] }) {
-          edges {
-            node {
-              id
-              frontmatter {
-                title
+function DropdownQueryContainer({ directoryName, menuExpanded }) {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___title] }) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  title
+                }
+                fields {
+                  slug
+                }
+                fileAbsolutePath
               }
-              fields {
-                slug
-              }
-              fileAbsolutePath
             }
           }
         }
-      }
-    `}
-    render={(data) => (
-      <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />
-    )}
-  />
-);
+      `}
+      render={(data) => (
+        <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />
+      )}
+    />
+  );
+}
 
 export default DropdownQueryContainer;
 

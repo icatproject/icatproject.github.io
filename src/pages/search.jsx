@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { css } from '@emotion/core';
 import { Index } from 'elasticlunr';
-import queryString from 'query-string';
 import SEO from '../components/seo';
 
 function search(index, query) {
@@ -16,9 +15,11 @@ function search(index, query) {
   return results;
 }
 
-const SearchPage = (props) => {
+function SearchPage(props) {
   const { location, data } = props;
-  const { query } = queryString.parse(location.search);
+  const searchParams = new URLSearchParams(location.search);
+  const query = searchParams.get('query');
+
   // Create an elastic lunr index and hydrate with graphql query results
   const index = React.useMemo(() => Index.load(data.siteSearchIndex.index), [
     data.siteSearchIndex.index,
@@ -60,7 +61,7 @@ const SearchPage = (props) => {
       ))}
     </>
   );
-};
+}
 
 export default SearchPage;
 
