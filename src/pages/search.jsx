@@ -21,9 +21,10 @@ function SearchPage(props) {
   const query = searchParams.get('query');
 
   // Create an elastic lunr index and hydrate with graphql query results
-  const index = React.useMemo(() => Index.load(data.siteSearchIndex.index), [
-    data.siteSearchIndex.index,
-  ]);
+  const index = React.useMemo(
+    () => Index.load(data.siteSearchIndex.index),
+    [data.siteSearchIndex.index]
+  );
   const [results, setResults] = React.useState([]);
 
   React.useEffect(() => {

@@ -135,7 +135,7 @@ export default function NavbarQueryContainer() {
               relativePath: { regex: "/^[^/]+$/" }
               name: { regex: "/^[^/_]/" }
             }
-            sort: { order: ASC, fields: [name] }
+            sort: { name: ASC }
           ) {
             edges {
               node {

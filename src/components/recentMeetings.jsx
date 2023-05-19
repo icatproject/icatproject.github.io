@@ -9,7 +9,7 @@ function RecentMeetings({ styles: { ulStyle, liStyle, linkStyle, headerStyle } }
       query={graphql`
         query {
           allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
+            sort: { frontmatter: { date: DESC } }
             filter: {
               fileAbsolutePath: {
                 regex: "/(collaboration)/(communication)/(monthly-meetings)/((?!index).)*[.]md$/"

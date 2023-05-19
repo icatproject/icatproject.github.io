@@ -198,7 +198,7 @@ function DropdownQueryContainer({ directoryName, menuExpanded }) {
     <StaticQuery
       query={graphql`
         query {
-          allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___title] }) {
+          allMarkdownRemark(sort: { frontmatter: { title: ASC } }) {
             edges {
               node {
                 id
