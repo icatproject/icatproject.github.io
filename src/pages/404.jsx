@@ -6,7 +6,6 @@ import Searchbar from '../components/searchbar';
 function NotFoundPage() {
   return (
     <>
-      <SEO title="404: Not found" />
       <h1>NOT FOUND</h1>
       <p>It looks like nothing was found at this location. Maybe try a search?</p>
       <Searchbar
@@ -19,3 +18,8 @@ function NotFoundPage() {
 }
 
 export default NotFoundPage;
+
+export function Head(props) {
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  return <SEO title="404: Not found" {...props} />;
+}

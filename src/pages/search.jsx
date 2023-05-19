@@ -32,7 +32,6 @@ function SearchPage(props) {
 
   return (
     <>
-      <SEO title="Search" keywords={[`search`, `ICAT`]} />
       <h1>{`Search Results for: ${query}`}</h1>
       {results.map((page) => (
         <article key={page.slug}>
@@ -83,3 +82,8 @@ SearchPage.propTypes = {
     search: PropTypes.string,
   }).isRequired,
 };
+
+export function Head(props) {
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  return <SEO title="Search" keywords={[`search`, `ICAT`]} {...props} />;
+}
