@@ -2,7 +2,7 @@ import React from 'react';
 import 'normalize.css';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
 import Header from './header';

@@ -5,9 +5,9 @@
   "version": "0.1.0",
   "author": "icatproject",
   "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@emotion/react": "^11.11.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "3.0.2",
     "elasticlunr": "^0.9.5",
@@ -37,12 +37,8 @@
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint --ext js,jsx src --fix",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "deploy": "gatsby build && gh-pages -d public -b master"
-  },
-  "husky": {
-    "hooks": {
-      "precommit": "lint-staged"
-    }
+    "deploy": "gatsby build && gh-pages -d public -b master",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -53,15 +49,15 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.4",
-    "gh-pages": "^3.1.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^5.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
   },
   "overrides": {
     "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {

@@ -1,7 +1,7 @@
 import { StaticQuery, graphql, Link } from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 function RecentMeetings({ styles: { ulStyle, liStyle, linkStyle, headerStyle } }) {
   return (

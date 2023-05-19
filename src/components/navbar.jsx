@@ -1,7 +1,7 @@
 import { StaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Dropdown from './dropdown';
 

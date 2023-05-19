@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import SEO from '../components/seo';
 import Searchbar from '../components/searchbar';
 

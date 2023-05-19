@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
 function RecentCommits({ styles: { ulStyle, liStyle, linkStyle, headerStyle } }) {
@@ -28,11 +28,7 @@ function RecentCommits({ styles: { ulStyle, liStyle, linkStyle, headerStyle } })
           promises.push(promise);
         }
         Promise.all(promises).then(() => {
-          setGithubData(
-            loopdata.sort((a, b) => {
-              return new Date(b.date) - new Date(a.date);
-            })
-          );
+          setGithubData(loopdata.sort((a, b) => new Date(b.date) - new Date(a.date)));
         });
       })
       .catch((error) => {
