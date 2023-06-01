@@ -1,4 +1,4 @@
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
@@ -183,31 +183,25 @@ function Dropdown(props) {
 }
 
 function DropdownQueryContainer({ directoryName, menuExpanded }) {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allMarkdownRemark(sort: { frontmatter: { title: ASC } }) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  title
-                }
-                fields {
-                  slug
-                }
-                fileAbsolutePath
-              }
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(sort: { frontmatter: { title: ASC } }) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
             }
+            fields {
+              slug
+            }
+            fileAbsolutePath
           }
         }
-      `}
-      render={(data) => (
-        <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />
-      )}
-    />
-  );
+      }
+    }
+  `);
+  return <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />;
 }
 
 export default DropdownQueryContainer;

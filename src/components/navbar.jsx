@@ -1,4 +1,4 @@
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
@@ -125,30 +125,26 @@ class Navbar extends React.Component {
 }
 
 export default function NavbarQueryContainer() {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allDirectory(
-            filter: {
-              sourceInstanceName: { eq: "content" }
-              relativePath: { regex: "/^[^/]+$/" }
-              name: { regex: "/^[^/_]/" }
-            }
-            sort: { name: ASC }
-          ) {
-            edges {
-              node {
-                id
-                name
-              }
-            }
+  const data = useStaticQuery(graphql`
+    query {
+      allDirectory(
+        filter: {
+          sourceInstanceName: { eq: "content" }
+          relativePath: { regex: "/^[^/]+$/" }
+          name: { regex: "/^[^/_]/" }
+        }
+        sort: { name: ASC }
+      ) {
+        edges {
+          node {
+            id
+            name
           }
         }
-      `}
-      render={(data) => <Navbar data={data} />}
-    />
-  );
+      }
+    }
+  `);
+  return <Navbar data={data} />;
 }
 
 Navbar.propTypes = {
