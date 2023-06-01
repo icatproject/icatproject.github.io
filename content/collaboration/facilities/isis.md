@@ -19,8 +19,13 @@ is extracted from these files and added to the catalogue to improve findability 
 the data discovery process.
 
 All data produced at ISIS since 1984 has been catalogued and is
-available. The ingestion pipeline is made up of a few .NET applications which
-communicate over an ActiveMQ instance.
+available, in line with
+the [ISIS data policy](https://www.isis.stfc.ac.uk/Pages/Data-Policy.aspx). The
+ingestion pipeline is made up of a few .NET applications which communicate over an
+ActiveMQ instance.
+The [repository](https://github.com/ral-facilities/isis-icat-ingestion/)
+containing the pipeline code is currently private, but we're hoping to make it
+public soon.
 
 ISIS uses [DataGateway](https://github.com/ral-facilities/datagateway) as the web
 interface to data, and the catalogue is also available in Mantid, via the ICAT
@@ -34,3 +39,5 @@ The ISIS Neutron and Muon Source data catalogue can be accessed here:
 [https://data.isis.stfc.ac.uk/](https://data.isis.stfc.ac.uk/)
 
 ![Exterior view of STFC's ISIS Facility](/ral3.jpg "Exterior view of STFC's ISIS Facility")
+
+Please contact isisdata@stfc.ac.uk if you have any questions about our ICAT setup.
