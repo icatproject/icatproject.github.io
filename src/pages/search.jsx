@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { Index } from 'elasticlunr';
-import queryString from 'query-string';
 import SEO from '../components/seo';
 
 function search(index, query) {
@@ -16,13 +15,16 @@ function search(index, query) {
   return results;
 }
 
-const SearchPage = (props) => {
+function SearchPage(props) {
   const { location, data } = props;
-  const { query } = queryString.parse(location.search);
+  const searchParams = new URLSearchParams(location.search);
+  const query = searchParams.get('query');
+
   // Create an elastic lunr index and hydrate with graphql query results
-  const index = React.useMemo(() => Index.load(data.siteSearchIndex.index), [
-    data.siteSearchIndex.index,
-  ]);
+  const index = React.useMemo(
+    () => Index.load(data.siteSearchIndex.index),
+    [data.siteSearchIndex.index]
+  );
   const [results, setResults] = React.useState([]);
 
   React.useEffect(() => {
@@ -31,7 +33,6 @@ const SearchPage = (props) => {
 
   return (
     <>
-      <SEO title="Search" keywords={[`search`, `ICAT`]} />
       <h1>{`Search Results for: ${query}`}</h1>
       {results.map((page) => (
         <article key={page.slug}>
@@ -60,7 +61,7 @@ const SearchPage = (props) => {
       ))}
     </>
   );
-};
+}
 
 export default SearchPage;
 
@@ -82,3 +83,8 @@ SearchPage.propTypes = {
     search: PropTypes.string,
   }).isRequired,
 };
+
+export function Head(props) {
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  return <SEO title="Search" keywords={['search', 'ICAT']} {...props} />;
+}

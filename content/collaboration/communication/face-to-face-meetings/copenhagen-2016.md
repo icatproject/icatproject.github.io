@@ -2,7 +2,7 @@
 title: ICAT F2F at NOBUGS 2016, Copenhagen
 ---
 
-![Attendees of the 2016 ICAT F2F in Copenhagen](/collaboration/communication/face-to-face-meetings/group.jpg "Attendees of the 2016 ICAT F2F in Copenhagen")
+![Attendees of the 2016 ICAT F2F in Copenhagen](/group.jpg "Attendees of the 2016 ICAT F2F in Copenhagen")
 
 The talks given are listed below...
 

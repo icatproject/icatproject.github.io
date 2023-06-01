@@ -1,7 +1,7 @@
 import { StaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Dropdown from './dropdown';
 
@@ -124,30 +124,32 @@ class Navbar extends React.Component {
   }
 }
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allDirectory(
-          filter: {
-            sourceInstanceName: { eq: "content" }
-            relativePath: { regex: "/^[^/]+$/" }
-            name: { regex: "/^[^/_]/" }
-          }
-          sort: { order: ASC, fields: [name] }
-        ) {
-          edges {
-            node {
-              id
-              name
+export default function NavbarQueryContainer() {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allDirectory(
+            filter: {
+              sourceInstanceName: { eq: "content" }
+              relativePath: { regex: "/^[^/]+$/" }
+              name: { regex: "/^[^/_]/" }
+            }
+            sort: { name: ASC }
+          ) {
+            edges {
+              node {
+                id
+                name
+              }
             }
           }
         }
-      }
-    `}
-    render={(data) => <Navbar data={data} />}
-  />
-);
+      `}
+      render={(data) => <Navbar data={data} />}
+    />
+  );
+}
 
 Navbar.propTypes = {
   data: PropTypes.shape({

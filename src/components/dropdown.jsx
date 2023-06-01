@@ -1,6 +1,6 @@
 import { StaticQuery, graphql, Link } from 'gatsby';
 import React from 'react';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
 class Dropdown extends React.Component {
@@ -9,25 +9,20 @@ class Dropdown extends React.Component {
     this.state = {
       expanded: false,
     };
+    this.mediaQuery = window.matchMedia('(max-width: 768px)');
     this.handleBlur = this.handleBlur.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.renderListItem = this.renderListItem.bind(this);
     this.updateMediaQuery = this.updateMediaQuery.bind(this);
-    this.mediaQuery = false;
   }
 
   componentDidMount() {
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    this.updateMediaQuery(mediaQuery);
-    mediaQuery.addEventListener('change', this.updateMediaQuery);
+    this.updateMediaQuery(this.mediaQuery);
+    this.mediaQuery.addEventListener('change', this.updateMediaQuery);
   }
 
-  updateMediaQuery(mediaQuery) {
-    if (mediaQuery.matches) {
-      this.setState({ mediaQuery: true });
-    } else {
-      this.setState({ mediaQuery: false });
-    }
+  componentWillUnmount() {
+    this.mediaQuery.removeEventListener('change', this.updateMediaQuery);
   }
 
   handleBlur() {
@@ -36,6 +31,10 @@ class Dropdown extends React.Component {
 
   handleFocus() {
     this.setState({ expanded: true });
+  }
+
+  updateMediaQuery(mediaQuery) {
+    this.setState({ mediaQuery: mediaQuery.matches });
   }
 
   renderListItem(node, shouldRender) {
@@ -194,31 +193,33 @@ class Dropdown extends React.Component {
   }
 }
 
-const DropdownQueryContainer = ({ directoryName, menuExpanded }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___title] }) {
-          edges {
-            node {
-              id
-              frontmatter {
-                title
+function DropdownQueryContainer({ directoryName, menuExpanded }) {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allMarkdownRemark(sort: { frontmatter: { title: ASC } }) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  title
+                }
+                fields {
+                  slug
+                }
+                fileAbsolutePath
               }
-              fields {
-                slug
-              }
-              fileAbsolutePath
             }
           }
         }
-      }
-    `}
-    render={(data) => (
-      <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />
-    )}
-  />
-);
+      `}
+      render={(data) => (
+        <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />
+      )}
+    />
+  );
+}
 
 export default DropdownQueryContainer;
 
