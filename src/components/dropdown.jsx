@@ -1,224 +1,207 @@
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-class Dropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      expanded: false,
+function Dropdown(props) {
+  const { directoryName, data, menuExpanded } = props;
+  const [expanded, setExpanded] = React.useState(false);
+  const [mediaQueryMatches, setMediaQueryMatches] = React.useState(false);
+
+  const updateMediaQuery = React.useCallback((mediaQuery) => {
+    setMediaQueryMatches(mediaQuery.matches);
+  }, []);
+
+  const handleBlur = React.useCallback(() => {
+    setExpanded(false);
+  }, []);
+
+  const handleFocus = React.useCallback(() => {
+    setExpanded(true);
+  }, []);
+
+  React.useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    updateMediaQuery(mediaQuery);
+    mediaQuery.addEventListener('change', updateMediaQuery);
+    return () => {
+      mediaQuery.removeEventListener('change', updateMediaQuery);
     };
-    this.mediaQuery = window.matchMedia('(max-width: 768px)');
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.renderListItem = this.renderListItem.bind(this);
-    this.updateMediaQuery = this.updateMediaQuery.bind(this);
-  }
+  }, []);
 
-  componentDidMount() {
-    this.updateMediaQuery(this.mediaQuery);
-    this.mediaQuery.addEventListener('change', this.updateMediaQuery);
-  }
-
-  componentWillUnmount() {
-    this.mediaQuery.removeEventListener('change', this.updateMediaQuery);
-  }
-
-  handleBlur() {
-    this.setState({ expanded: false });
-  }
-
-  handleFocus() {
-    this.setState({ expanded: true });
-  }
-
-  updateMediaQuery(mediaQuery) {
-    this.setState({ mediaQuery: mediaQuery.matches });
-  }
-
-  renderListItem(node, shouldRender) {
-    const { menuExpanded } = this.props;
-    const { mediaQuery } = this.state;
-    if (shouldRender) {
-      return (
-        <li
-          key={node.id}
-          css={css`
-            @media (min-width: 768px) {
-              line-height: 12px;
-            }
-            line-height: 6px;
-          `}
-        >
-          <Link
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            to={node.fields.slug}
-            tabIndex={mediaQuery && !menuExpanded ? -1 : 0}
+  const renderListItem = React.useCallback(
+    (node, shouldRender) => {
+      if (shouldRender) {
+        return (
+          <li
+            key={node.id}
             css={css`
-              color: white;
-              text-decoration: none;
-              display: block;
-              padding: 12px 0.5rem;
-              font-size: 11px;
-              text-transform: uppercase;
               @media (min-width: 768px) {
-                &:focus,
-                &:hover {
-                  background-color: #41a62a;
-                }
+                line-height: 12px;
               }
-              @media (max-width: 768px) {
-                padding: 0.5rem 2rem;
-                text-align: left;
-                &:hover,
-                &:focus {
-                  color: #24890d;
-                }
-              }
+              line-height: 6px;
             `}
           >
-            {node.frontmatter.title}
-          </Link>
-        </li>
-      );
-    }
-    return null;
-  }
+            <Link
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              to={node.fields.slug}
+              tabIndex={mediaQueryMatches && !menuExpanded ? -1 : 0}
+              css={css`
+                color: white;
+                text-decoration: none;
+                display: block;
+                padding: 12px 0.5rem;
+                font-size: 11px;
+                text-transform: uppercase;
+                @media (min-width: 768px) {
+                  &:focus,
+                  &:hover {
+                    background-color: #41a62a;
+                  }
+                }
+                @media (max-width: 768px) {
+                  padding: 0.5rem 2rem;
+                  text-align: left;
+                  &:hover,
+                  &:focus {
+                    color: #24890d;
+                  }
+                }
+              `}
+            >
+              {node.frontmatter.title}
+            </Link>
+          </li>
+        );
+      }
+      return null;
+    },
+    [mediaQueryMatches, menuExpanded, handleBlur, handleFocus]
+  );
 
-  render() {
-    const { directoryName, data, menuExpanded } = this.props;
-    const { expanded, mediaQuery } = this.state;
-    const menuVisibiltyCSS = expanded
-      ? css`
-          left: inherit;
-          top: inherit;
-        `
-      : css`
-          top: -9999px;
-          left: -9999px;
-        `;
-    return (
-      <li
-        onMouseEnter={this.handleFocus}
-        onMouseLeave={this.handleBlur}
+  const menuVisibiltyCSS = expanded
+    ? css`
+        left: inherit;
+        top: inherit;
+      `
+    : css`
+        top: -9999px;
+        left: -9999px;
+      `;
+
+  return (
+    <li
+      onMouseEnter={handleFocus}
+      onMouseLeave={handleBlur}
+      css={css`
+        float: left;
+        background-color: black;
+        @media (min-width: 768px) {
+          &:hover,
+          &:focus {
+            background-color: #24890d;
+          }
+          margin-right: 1px;
+          line-height: 2.5rem;
+        }
+        @media (max-width: 768px) {
+          text-align: left;
+          width: 100%;
+          margin: 0;
+          line-height: 1rem;
+        }
+      `}
+    >
+      <Link
+        to={`/${directoryName}`}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        tabIndex={mediaQueryMatches && !menuExpanded ? -1 : 0}
+        aria-haspopup="true"
         css={css`
-          float: left;
-          background-color: black;
+          text-decoration: none;
+          display: block;
+          color: white;
+          padding: 0 0.5rem;
+          text-transform: uppercase;
+          font-size: 11px;
           @media (min-width: 768px) {
             &:hover,
             &:focus {
               background-color: #24890d;
             }
-            margin-right: 1px;
-            line-height: 2.5rem;
           }
           @media (max-width: 768px) {
-            text-align: left;
+            &:hover,
+            &:focus {
+              color: #24890d;
+            }
+          }
+        `}
+      >
+        {directoryName.replace(/-/g, ' ')}
+      </Link>
+      <ul
+        css={css`
+          ${menuVisibiltyCSS}
+          width: 10rem;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          background-color: #24890d;
+          position: absolute;
+          @media (max-width: 768px) {
+            background-color: black;
+            position: static;
+            display: block;
+            text-align: center;
             width: 100%;
+            padding: 10px 0;
             margin: 0;
             line-height: 1rem;
           }
         `}
+        aria-label={`${directoryName.replace(/-/g, ' ')}-sub-menu`}
       >
-        <Link
-          to={`/${directoryName}`}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          tabIndex={mediaQuery && !menuExpanded ? -1 : 0}
-          aria-haspopup="true"
-          css={css`
-            text-decoration: none;
-            display: block;
-            color: white;
-            padding: 0 0.5rem;
-            text-transform: uppercase;
-            font-size: 11px;
-            @media (min-width: 768px) {
-              &:hover,
-              &:focus {
-                background-color: #24890d;
-              }
-            }
-            @media (max-width: 768px) {
-              &:hover,
-              &:focus {
-                color: #24890d;
-              }
-            }
-          `}
-        >
-          {directoryName.replace(/-/g, ' ')}
-        </Link>
-        <ul
-          css={css`
-            ${menuVisibiltyCSS}
-            width: 10rem;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: #24890d;
-            position: absolute;
-            @media (max-width: 768px) {
-              background-color: black;
-              position: static;
-              display: block;
-              text-align: center;
-              width: 100%;
-              padding: 10px 0;
-              margin: 0;
-              line-height: 1rem;
-            }
-          `}
-          aria-label={`${directoryName.replace(/-/g, ' ')}-sub-menu`}
-        >
-          {data.allMarkdownRemark.edges.map(({ node }) =>
-            this.renderListItem(
-              node,
-              // we don't want index.md files as dropdown list items
-              // we also only want files that are direct children of the directory
-              // or are index.md files of sub directories
-              !node.fileAbsolutePath.includes(`${directoryName}/index.md`) &&
-                (node.fileAbsolutePath.includes(
-                  `${directoryName}/${node.fileAbsolutePath.split('/').pop()}`
-                ) ||
-                  node.fileAbsolutePath.search(new RegExp(`/${directoryName}/[^/]+/index.md`)) !==
-                    -1)
-            )
-          )}
-        </ul>
-      </li>
-    );
-  }
+        {data.allMarkdownRemark.edges.map(({ node }) =>
+          renderListItem(
+            node,
+            // we don't want index.md files as dropdown list items
+            // we also only want files that are direct children of the directory
+            // or are index.md files of sub directories
+            !node.fileAbsolutePath.includes(`${directoryName}/index.md`) &&
+              (node.fileAbsolutePath.includes(
+                `${directoryName}/${node.fileAbsolutePath.split('/').pop()}`
+              ) ||
+                node.fileAbsolutePath.search(new RegExp(`/${directoryName}/[^/]+/index.md`)) !== -1)
+          )
+        )}
+      </ul>
+    </li>
+  );
 }
 
 function DropdownQueryContainer({ directoryName, menuExpanded }) {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allMarkdownRemark(sort: { frontmatter: { title: ASC } }) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  title
-                }
-                fields {
-                  slug
-                }
-                fileAbsolutePath
-              }
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(sort: { frontmatter: { title: ASC } }) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
             }
+            fields {
+              slug
+            }
+            fileAbsolutePath
           }
         }
-      `}
-      render={(data) => (
-        <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />
-      )}
-    />
-  );
+      }
+    }
+  `);
+  return <Dropdown directoryName={directoryName} data={data} menuExpanded={menuExpanded} />;
 }
 
 export default DropdownQueryContainer;
