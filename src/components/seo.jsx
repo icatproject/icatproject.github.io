@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
@@ -14,64 +13,46 @@ const detailsQuery = graphql`
   }
 `;
 
-function SEO({ lang, keywords, title }) {
+export const useSiteMetadata = () => {
+  const data = useStaticQuery(detailsQuery);
+
+  return data.site.siteMetadata;
+};
+
+function SEO({ title, description, location, keywords }) {
+  const { title: defaultTitle, description: defaultDescription, siteUrl } = useSiteMetadata();
+
+  const seo = {
+    title: `${title} | ${defaultTitle}` || defaultTitle,
+    description: description || defaultDescription,
+    url: `${siteUrl}${location.pathname || ''}`,
+  };
+
   return (
-    <StaticQuery
-      query={detailsQuery}
-      render={(data) => {
-        const metaDescription = data.site.siteMetadata.description;
-        return (
-          <Helmet
-            htmlAttributes={{
-              lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-            meta={[
-              {
-                name: `description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:title`,
-                content: title,
-              },
-              {
-                property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
-                name: 'google-site-verification',
-                content: '9X6CrnxO5Y0COmvYo15fcva3BeU-Qd8XSu5xWV44EDM',
-              },
-            ].concat(
-              keywords.length > 0
-                ? {
-                    name: `keywords`,
-                    content: keywords.join(`, `),
-                  }
-                : []
-            )}
-          />
-        );
-      }}
-    />
+    <>
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={seo.description} />
+      <meta name="og:type" content="website" />
+      <meta name="google-site-verification" content="9X6CrnxO5Y0COmvYo15fcva3BeU-Qd8XSu5xWV44EDM" />
+      {keywords && <meta name="keywords" content={keywords.join(', ')} />}
+    </>
   );
 }
 
 SEO.defaultProps = {
-  lang: `en`,
   keywords: [],
+  description: undefined,
 };
 
 SEO.propTypes = {
-  lang: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default SEO;

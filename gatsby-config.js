@@ -16,7 +16,6 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -31,9 +30,6 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-copy-linked-files`,
-          },
-          {
-            resolve: `gatsby-remark-relative-images`,
           },
           {
             resolve: `gatsby-remark-images`,
@@ -58,6 +54,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#000000`,
         display: `browser`,
+        icon: `src/images/favicon.ico`,
       },
     },
     `gatsby-plugin-sitemap`,

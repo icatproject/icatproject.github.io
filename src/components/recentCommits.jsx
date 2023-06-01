@@ -1,21 +1,18 @@
 import React from 'react';
-import axios from 'axios';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-const RecentCommits = ({ styles: { ulStyle, liStyle, linkStyle, headerStyle } }) => {
+function RecentCommits({ styles: { ulStyle, liStyle, linkStyle, headerStyle } }) {
   const [githubData, setGithubData] = React.useState([]);
 
   React.useEffect(() => {
     const loopdata = [];
-    axios
-      .get('https://api.github.com/orgs/icatproject/repos')
+    fetch('https://api.github.com/orgs/icatproject/repos')
       .then((reposResponse) => {
         const promises = [];
         for (let i = 0; i < reposResponse.data.length; i += 1) {
           const { name } = reposResponse.data[i];
-          const promise = axios
-            .get(`${reposResponse.data[i].url}/commits`)
+          const promise = fetch(`${reposResponse.data[i].url}/commits`)
             .then((commitsResponse) => {
               const object = {
                 name,
@@ -31,11 +28,7 @@ const RecentCommits = ({ styles: { ulStyle, liStyle, linkStyle, headerStyle } })
           promises.push(promise);
         }
         Promise.all(promises).then(() => {
-          setGithubData(
-            loopdata.sort((a, b) => {
-              return new Date(b.date) - new Date(a.date);
-            })
-          );
+          setGithubData(loopdata.sort((a, b) => new Date(b.date) - new Date(a.date)));
         });
       })
       .catch((error) => {
@@ -90,7 +83,7 @@ const RecentCommits = ({ styles: { ulStyle, liStyle, linkStyle, headerStyle } })
       </nav>
     </div>
   );
-};
+}
 
 export default RecentCommits;
 

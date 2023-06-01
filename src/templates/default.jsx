@@ -1,29 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import SEO from '../components/seo';
 
-const DefaultTemplate = ({ data }) => {
+function DefaultTemplate({ data }) {
   const post = data.markdownRemark;
   return (
     <>
-      <SEO
-        title={post.frontmatter.title}
-        keywords={[
-          `ICAT`,
-          `ICAT data`,
-          `ICAT metadata`,
-          `ICAT catalogue`,
-          `ICAT catalog`,
-          `data catalogue`,
-          `data catalog`,
-          `metadata catalogue`,
-          `metadata catalog`,
-          `ICAT project`,
-          `ICAT software`,
-        ]}
-      />
       <h1
         css={css`
           font-weight: 300;
@@ -37,12 +21,12 @@ const DefaultTemplate = ({ data }) => {
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </>
   );
-};
+}
 
 export default DefaultTemplate;
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -64,3 +48,29 @@ DefaultTemplate.propTypes = {
     }).isRequired,
   }).isRequired,
 };
+
+// can't use proptypes with special Gatsby Head component, so just ignore
+// eslint-disable-next-line react/prop-types
+export function Head({ data, ...rest }) {
+  return (
+    <SEO
+      // eslint-disable-next-line react/prop-types
+      title={data.markdownRemark.frontmatter.title}
+      keywords={[
+        'ICAT',
+        'ICAT data',
+        'ICAT metadata',
+        'ICAT catalogue',
+        'ICAT catalog',
+        'data catalogue',
+        'data catalog',
+        'metadata catalogue',
+        'metadata catalog',
+        'ICAT project',
+        'ICAT software',
+      ]}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...rest}
+    />
+  );
+}
