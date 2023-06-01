@@ -25,7 +25,7 @@ function SEO({ title, description, location, keywords }) {
   const seo = {
     title: `${title} | ${defaultTitle}` || defaultTitle,
     description: description || defaultDescription,
-    url: `${siteUrl}${location.pathname || ``}`,
+    url: `${siteUrl}${location.pathname || ''}`,
   };
 
   return (
@@ -36,7 +36,7 @@ function SEO({ title, description, location, keywords }) {
       <meta name="og:description" content={seo.description} />
       <meta name="og:type" content="website" />
       <meta name="google-site-verification" content="9X6CrnxO5Y0COmvYo15fcva3BeU-Qd8XSu5xWV44EDM" />
-      {keywords && <meta name="keywords" content={keywords.join(`, `)} />}
+      {keywords && <meta name="keywords" content={keywords.join(', ')} />}
     </>
   );
 }

@@ -57,17 +57,17 @@ export function Head({ data, ...rest }) {
       // eslint-disable-next-line react/prop-types
       title={data.markdownRemark.frontmatter.title}
       keywords={[
-        `ICAT`,
-        `ICAT data`,
-        `ICAT metadata`,
-        `ICAT catalogue`,
-        `ICAT catalog`,
-        `data catalogue`,
-        `data catalog`,
-        `metadata catalogue`,
-        `metadata catalog`,
-        `ICAT project`,
-        `ICAT software`,
+        'ICAT',
+        'ICAT data',
+        'ICAT metadata',
+        'ICAT catalogue',
+        'ICAT catalog',
+        'data catalogue',
+        'data catalog',
+        'metadata catalogue',
+        'metadata catalog',
+        'ICAT project',
+        'ICAT software',
       ]}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}

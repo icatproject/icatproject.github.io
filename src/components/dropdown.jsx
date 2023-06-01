@@ -9,6 +9,7 @@ class Dropdown extends React.Component {
     this.state = {
       expanded: false,
     };
+    this.mediaQuery = window.matchMedia('(max-width: 768px)');
     this.handleBlur = this.handleBlur.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.renderListItem = this.renderListItem.bind(this);
@@ -16,9 +17,12 @@ class Dropdown extends React.Component {
   }
 
   componentDidMount() {
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    this.updateMediaQuery(mediaQuery);
-    mediaQuery.addEventListener('change', this.updateMediaQuery);
+    this.updateMediaQuery(this.mediaQuery);
+    this.mediaQuery.addEventListener('change', this.updateMediaQuery);
+  }
+
+  componentWillUnmount() {
+    this.mediaQuery.removeEventListener('change', this.updateMediaQuery);
   }
 
   handleBlur() {
@@ -30,11 +34,7 @@ class Dropdown extends React.Component {
   }
 
   updateMediaQuery(mediaQuery) {
-    if (mediaQuery.matches) {
-      this.setState({ mediaQuery: true });
-    } else {
-      this.setState({ mediaQuery: false });
-    }
+    this.setState({ mediaQuery: mediaQuery.matches });
   }
 
   renderListItem(node, shouldRender) {

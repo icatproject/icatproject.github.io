@@ -86,5 +86,5 @@ SearchPage.propTypes = {
 
 export function Head(props) {
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <SEO title="Search" keywords={[`search`, `ICAT`]} {...props} />;
+  return <SEO title="Search" keywords={['search', 'ICAT']} {...props} />;
 }
