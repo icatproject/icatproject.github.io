@@ -10,7 +10,7 @@ ICAT is in use at some of the world's largest scientific facilities enabling acc
 
 ### Find out more
 
-To find out more about the ICAT project, go to the [About](about.md) page.
+To find out more about the ICAT project, go to the [About](/about) page.
 
 ### Use the web interface
 
@@ -18,11 +18,11 @@ For instructions on how to use the web interface to ICAT - called TopCat - see t
 
 ### Get help
 
-To get help from the ICAT team, see the [Support](support.md) page.
+To get help from the ICAT team, see the [Support](support) page.
 
 ### Install ICAT
 
-To get started installing the ICAT software, go to the [Quick Start](docs/quick_start.md) or [Installation Overview](docs/installation_overview.md) pages.
+To get started installing the ICAT software, go to the [Quick Start](/installation/quick-start-installation) or [Installation Overview](/installation) pages.
 
 ### Use the ICAT APIs
 

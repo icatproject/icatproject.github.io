@@ -12,12 +12,12 @@ holds password information in a properties file and authn_anon to
 provide anonymous access. You may also write your own plugin. You will
 need at least one authentication plugin.
 
-[Current release](releases/current-release/ "Current release")
+[Current release](/releases/current-release)
 lists the most recent set of artefacts. You are, however, recommended to
 read the individual component installation instructions first, each of
 which contains links to its own set of artefacts. Installation for all
 components follows the same model as explained at
-[Installation of an ICAT Component](/installation/component/ "ICAT component").
+[Installation of an ICAT Component](/installation/component).
 
 After installing the authenticators of your choice and ICAT itself
 please also install icat-setup to set up the authorization information
