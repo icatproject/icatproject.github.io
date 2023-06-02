@@ -1,4 +1,6 @@
-# ICAT F2F meeting collaborative notes - day one
+---
+title: ICAT F2F meeting collaborative notes - day one
+---
 
 Attendees:
 
