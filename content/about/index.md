@@ -7,10 +7,10 @@ The ICAT software takes data from large scientific facilities - such as particle
 ICAT is in use at some of the world's [largest scientific facilities](/collaboration/facilities) enabling access to millions of datasets. The software is free & open-source and has been developed and maintained by an international collaboration for over 10 years.
 
 ### What does ICAT do?
-For a more detailed explanation of what ICAT does and the actors, entities and workflows it models, see the [ICAT Schema](user-documentation/icat-schema) page.
+For a more detailed explanation of what ICAT does and the actors, entities and workflows it models, see the [ICAT Schema](/user-documentation/icat-schema) page.
 
 ### Who uses ICAT?
-ICAT is used at many large scientific facilities. To find out how ICAT is supporting great science, see our [case studies](collaboration/facilities).
+ICAT is used at many large scientific facilities. To find out how ICAT is supporting great science, see our [case studies](/collaboration/facilities).
 
 ### Who develops ICAT?
 ICAT is developed by an international collaboration. There are monthly meetings to discuss development, yearly face-to-face meetings and a steering committee which agrees the roadmap. To find out more, see our [Collaboration](/collaboration/) page.
