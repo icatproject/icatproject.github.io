@@ -514,4 +514,4 @@ DECISION
 - NOTE: need to create a new F2F page on the ICAT website like this one: https://icatproject.org/collaboration/communication/face-to-face-meetings/esrf-2020/
 
 
-Collaborative notes for day two in [this link](https://hackmd.io/@0QbV8YHDT_-AheekNxCMsQ/ByBeK2gEh).
+Collaborative notes for day two in [this link](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-collaborative-notes-2).
