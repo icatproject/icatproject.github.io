@@ -9,7 +9,7 @@ See also:
 - the [indico site](https://events.hifis.net/event/778/),
 - the [collaborative notes from the first day](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-collaborative-notes-1),
 - the [collaborative notes from the second day](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-collaborative-notes-2),
-- the [notes on the ICAT Roadmap](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-roadmap-notes/).
+- the [notes on the ICAT Roadmap](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-roadmap-notes).
 
 <img src="/images/collaboration/communication/face-to-face-meetings/2023-berlin-group.jpg" alt="Attendees of the 2023 ICAT F2F in Berlin" width="800"/>
 

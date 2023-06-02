@@ -6,7 +6,7 @@ title: ICAT F2F meeting collaborative notes - day two
 
 ## Roadmap
 
-Notes on the roadmap in [this document]((/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-roadmap-notes/)).
+Notes on the roadmap in [this document](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-roadmap-notes).
 
 ## Container and Orchestration, Packaging
 
