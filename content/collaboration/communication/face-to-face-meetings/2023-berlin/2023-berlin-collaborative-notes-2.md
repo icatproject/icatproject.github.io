@@ -1,10 +1,12 @@
-# ICAT F2F meeting collaborative notes - day two
+---
+title: ICAT F2F meeting collaborative notes - day two
+---
 
-[Day 1 notes](https://hackmd.io/b6iG4ZmsQcmsFye6eUaOww)
+[Day 1 notes](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-collaborative-notes-1)
 
 ## Roadmap
 
-Notes on the roadmap in [this document](https://hackmd.io/@0QbV8YHDT_-AheekNxCMsQ/r1iYnHxNn).
+Notes on the roadmap in [this document]((/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-roadmap-notes/)).
 
 ## Container and Orchestration, Packaging
 
