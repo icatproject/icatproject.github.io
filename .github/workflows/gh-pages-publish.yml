@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
       - name: ${{ github.ref != 'refs/heads/gatsbyjs' && 'Build site' || 'Build and publish site' }}
-        uses: enriikke/gatsby-gh-pages-action@fbe063b0cfaa8c16ec4e346cc3c48e9b154cce87 # v2.2.0
+        uses: enriikke/gatsby-gh-pages-action@6293db9dd9d25701c5220c26a8716ac8322b6588 # v2.2.1
         with:
           access-token: x-access-token:${{ secrets.GITHUB_TOKEN }}
           # Publish the site only if merging into gatsbyjs branch
