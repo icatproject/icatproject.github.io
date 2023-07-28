@@ -11,15 +11,15 @@ normally the highest number as listed below.  You can find release
 notes, installation instructions and the distribution in addition to
 user and developer documentation.
 
-- [authn.anon](https://repo.icatproject.org/site/authn/anon) -- 2.0.1
-- [authn.db](https://repo.icatproject.org/site/authn/db) -- 2.0.1
-- [authn.ldap](https://repo.icatproject.org/site/authn/ldap) -- 2.0.1
+- [authn.anon](https://repo.icatproject.org/site/authn/anon) -- 3.0.0
+- [authn.db](https://repo.icatproject.org/site/authn/db) -- 3.0.0
+- [authn.ldap](https://repo.icatproject.org/site/authn/ldap) -- 3.0.0
 - [authn.simple](https://repo.icatproject.org/site/authn/simple) --
-  2.0.1
-- [authn.oidc](https://repo.icatproject.org/site/authn/oidc) -- 1.0.0
-- [icat.server](https://repo.icatproject.org/site/icat/server) -- 5.0.0
-- [icat.client](https://repo.icatproject.org/site/icat/client) -- 5.0.0
-- [icat.lucene](https://repo.icatproject.org/site/icat/lucene) -- 1.1.2
+  3.0.0
+- [authn.oidc](https://repo.icatproject.org/site/authn/oidc) -- 1.1.0
+- [icat.server](https://repo.icatproject.org/site/icat/server) -- 6.0.0
+- [icat.client](https://repo.icatproject.org/site/icat/client) -- 6.0.0
+- [icat.lucene](https://repo.icatproject.org/site/icat/lucene) -- 2.0.2
 - [icat.oaipmh](https://repo.icatproject.org/site/icat/oaipmh) -- 1.1.1
 - [ids.server](https://repo.icatproject.org/site/ids/server) -- 1.12.0
 - [ids.client](https://repo.icatproject.org/site/ids/client) -- 1.3.0
