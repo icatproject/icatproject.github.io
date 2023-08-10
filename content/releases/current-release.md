@@ -25,7 +25,7 @@ user and developer documentation.
 - [ids.client](https://repo.icatproject.org/site/ids/client) -- 1.3.0
 - [ids.plugin](https://repo.icatproject.org/site/ids/plugin) -- 1.5.0
 - [ids.storage_file](https://repo.icatproject.org/site/ids/storage_file) --
-  1.4.3
+  1.4.4
 - [topcat](https://repo.icatproject.org/site/topcat) -- 2.4.9
 
 ## Issues with the current releases
