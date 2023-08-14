@@ -10,4 +10,4 @@ this is expected to be the last SNAPSHOT prior to release.
 
 | Component        | Snapshot | Distro                                                                                                                                                                                         | Final? |
 | ---------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| ids.server       | 2.0.0    | [ ids.server-2.0.0-20230814.163911-4-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/ids.server/2.0.0-SNAPSHOT/ids.server-2.0.0-20230814.163911-4-distro.zip)                   | no     |
+| ids.server       | 2.0.0    | [ ids.server-2.0.0-20230814.163911-4-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/ids.server/2.0.0-SNAPSHOT/ids.server-2.0.0-20230814.163911-4-distro.zip)                   | yes    |
