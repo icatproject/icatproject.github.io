@@ -16,7 +16,7 @@ user and developer documentation.
 - [authn.ldap](https://repo.icatproject.org/site/authn/ldap) -- 3.0.0
 - [authn.simple](https://repo.icatproject.org/site/authn/simple) --
   3.0.0
-- [authn.oidc](https://repo.icatproject.org/site/authn/oidc) -- 1.1.0
+- [authn.oidc](https://repo.icatproject.org/site/authn/oidc) -- 2.0.0
 - [icat.server](https://repo.icatproject.org/site/icat/server) -- 6.0.0
 - [icat.client](https://repo.icatproject.org/site/icat/client) -- 6.0.0
 - [icat.lucene](https://repo.icatproject.org/site/icat/lucene) -- 2.0.2
