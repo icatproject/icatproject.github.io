@@ -20,7 +20,7 @@ user and developer documentation.
 - [icat.server](https://repo.icatproject.org/site/icat/server) -- 6.0.0
 - [icat.client](https://repo.icatproject.org/site/icat/client) -- 6.0.0
 - [icat.lucene](https://repo.icatproject.org/site/icat/lucene) -- 2.0.2
-- [icat.oaipmh](https://repo.icatproject.org/site/icat/oaipmh) -- 1.1.2
+- [icat.oaipmh](https://repo.icatproject.org/site/icat/oaipmh) -- 2.0.0
 - [ids.server](https://repo.icatproject.org/site/ids/server) -- 1.12.1
 - [ids.client](https://repo.icatproject.org/site/ids/client) -- 1.3.0
 - [ids.plugin](https://repo.icatproject.org/site/ids/plugin) -- 1.5.0

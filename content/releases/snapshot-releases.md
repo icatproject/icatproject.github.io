@@ -10,5 +10,4 @@ this is expected to be the last SNAPSHOT prior to release.
 
 | Component        | Snapshot | Distro                                                                                                                                                                                         | Final? |
 | ---------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| icat.oaipmh      | 2.0.0    | [ icat.oaipmh-2.0.0-20230815.150227-3-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/icat.oaipmh/2.0.0-SNAPSHOT/icat.oaipmh-2.0.0-20230815.150227-3-distro.zip)                | yes    |
 | ids.server       | 2.0.0    | [ ids.server-2.0.0-20230817.131903-5-distro.zip ](https://repo.icatproject.org/repo/org/icatproject/ids.server/2.0.0-SNAPSHOT/ids.server-2.0.0-20230817.131903-5-distro.zip)                   | yes    |
