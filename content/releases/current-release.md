@@ -21,7 +21,7 @@ user and developer documentation.
 - [icat.client](https://repo.icatproject.org/site/icat/client) -- 6.0.0
 - [icat.lucene](https://repo.icatproject.org/site/icat/lucene) -- 2.0.2
 - [icat.oaipmh](https://repo.icatproject.org/site/icat/oaipmh) -- 2.0.1
-- [ids.server](https://repo.icatproject.org/site/ids/server) -- 1.12.1
+- [ids.server](https://repo.icatproject.org/site/ids/server) -- 2.0.0
 - [ids.client](https://repo.icatproject.org/site/ids/client) -- 1.3.0
 - [ids.plugin](https://repo.icatproject.org/site/ids/plugin) -- 2.0.0
 - [ids.storage_file](https://repo.icatproject.org/site/ids/storage_file) --
