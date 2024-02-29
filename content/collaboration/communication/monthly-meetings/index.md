@@ -2,26 +2,9 @@
 title: Monthly Meetings
 ---
 
-These are normally held on the fourth Thursday of the month at 15:00 UK
-time.
+These are normally held on the last Thursday of the month at 13:30 UK time.
 
-We  hold meetings using Google Hangout technology. This is supported
-well on Chrome on Windows and on some releases of Linux.  It is also
-well supported on Android and on Apple devices. To set it up you should:
-
-- Create a Google account if you don't already have one -- this does
-  not require that you have a gmail account.
-  (<https://accounts.google.com/signupwithoutgmail>)
-- Tell <dr.s.m.fisher@gmail.com> one of the email addresses associated
-  with your Google account and ask to be added to the ICAT hangout.
-- If you are logged in to your Google account then you should receive
-  a message when the meeting starts, if you are late you should be
-  able to find the meeting and connect to it.
-
-You might be asked to install a plugin when you join a  hangout for the
-first time. More information can be found
-at <http://www.google.com/hangouts/> If in doubt please
-contact <dr.s.m.fisher@gmail.com>
+We hold meetings using Zoom, you can join either via a Zoom client or via a browser. To join a meeting you should email someone active from the icatgroup google mailing list - they can share the meeting link and reminders for the meetings are usually posted on the mailing list.
 
 Records of the meetings are grouped by year:
 
