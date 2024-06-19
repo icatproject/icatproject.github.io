@@ -11,7 +11,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "3.0.2",
     "elasticlunr": "^0.9.5",
-    "gatsby": "^5.0.0",
+    "gatsby": "^5.13.6",
     "gatsby-plugin-catch-links": "^5.0.0",
     "gatsby-plugin-emotion": "^8.0.0",
     "gatsby-plugin-layout": "^4.0.0",
