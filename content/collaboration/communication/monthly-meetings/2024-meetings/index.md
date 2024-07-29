@@ -15,3 +15,5 @@ title: 2024 Meetings
 [30th May 2024](/collaboration/communication/monthly-meetings/2024-meetings/20240530-meeting)
 
 [27th June 2024](/collaboration/communication/monthly-meetings/2024-meetings/20240627-meeting)
+
+[25th July 2024](/collaboration/communication/monthly-meetings/2024-meetings/20240725-meeting)
