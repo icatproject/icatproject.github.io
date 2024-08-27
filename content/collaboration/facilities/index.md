@@ -12,5 +12,6 @@ Some of these facilities are:
 - [STFC's ISIS facility (ISIS)](/collaboration/facilities/isis/)
 - [ALBA Synchrotron Light Source (ALBA)](/collaboration/facilities/alba/)
 - [Diamond Light Source (DLS)](https://diamond.ac.uk/)
+- [SESAME Light Source (SESAME)](https://www.sesame.org.jo/)
 
 You can explore how each of the facilities uses ICAT by accessing their description page above.
