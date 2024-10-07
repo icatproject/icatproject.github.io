@@ -35,4 +35,4 @@ links](/about/useful-links/ "Useful Links")
 If you reuse this work, please cite it as shown on the [DataCite
 page](http://data.datacite.org/10.5286/SOFTWARE/ICAT)
 
-![Attendees of the 2016 ICAT F2F in Copenhagen](/collaboration/communication/face-to-face-meetings/group.jpg "Attendees of the 2016 ICAT F2F in Copenhagen")
+![Attendees of the 2023 ICAT F2F in Berlin](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-group.jpg "Attendees of the 2023 ICAT F2F in Berlin")
