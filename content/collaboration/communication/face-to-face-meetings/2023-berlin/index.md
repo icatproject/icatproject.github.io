@@ -1,8 +1,6 @@
 ---
-title: Berlin 2023
+title: ICAT F2F Meeting – Berlin – 3rd and 4th May 2023
 ---
-
-# ICAT F2F Meeting – Berlin – 3rd and 4th May 2023
 
 See also:
 
@@ -11,7 +9,7 @@ See also:
 - the [collaborative notes from the second day](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-collaborative-notes-2),
 - the [notes on the ICAT Roadmap](/collaboration/communication/face-to-face-meetings/2023-berlin/2023-berlin-roadmap-notes).
 
-<img src="/images/collaboration/communication/face-to-face-meetings/2023-berlin-group.jpg" alt="Attendees of the 2023 ICAT F2F in Berlin" width="800"/>
+![Attendees of the 2023 ICAT F2F in Berlin](/2023-berlin-group.jpg "Attendees of the 2023 ICAT F2F in Berlin")
 
 ## Agenda
 

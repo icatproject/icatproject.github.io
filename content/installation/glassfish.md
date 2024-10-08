@@ -31,7 +31,7 @@ Ensure that `hostname -f` returns a sensible result.
 
 ## Scripted setup
 
-Then run [setup-glassfish.py](/misc/scripts/setup-glassfish.py)
+Then run [setup-glassfish.py](https://raw.githubusercontent.com/icatproject/icat.utils/master/src/main/scripts/setup-glassfish.py)
 which takes as arguments the name of the domain you wish to create, the amount
 of memory to allow for the Java heap in glassfish and optionally a
 password. If you don't specify a password you will be prompted for it
