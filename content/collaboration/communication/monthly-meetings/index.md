@@ -17,3 +17,4 @@ Records of the meetings are grouped by year:
 - [2019](/collaboration/communication/monthly-meetings/2019-meetings/ "2019 Meetings")
 - [2023](/collaboration/communication/monthly-meetings/2023-meetings/ "2023 Meetings")
 - [2024](/collaboration/communication/monthly-meetings/2024-meetings/ "2024 Meetings")
+- [2025](/collaboration/communication/monthly-meetings/2025-meetings/ "2025 Meetings")
