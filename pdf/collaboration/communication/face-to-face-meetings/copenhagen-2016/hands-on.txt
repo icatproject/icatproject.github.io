@@ -1,0 +1,72 @@
+Hands-on exercises
+==================
+
+This text file lists the commands in the hands on excercise that I
+showed during my presentation on "Experience with Docker and ICAT" at
+the ICAT Meeting in Copenhagen in October 2016.
+
+All docker images used can be found at Docker Hub, see
+https://hub.docker.com/u/rkrahl/
+Some commands however reference additional files from local disk with
+configurations, not shown here.
+
+
+0. Preparation
+
+Start a set of three containers providing a complete working ICAT
+installation.
+
+docker volume create --name=gfdomain
+docker volume create --name=storage
+chown glassfish:glassfish /var/lib/docker/volumes/gfdomain/_data /var/lib/docker/volumes/storage/_data
+
+docker run -d --name mysql -h mysql \
+    -v /root/docker/common/init-icat.sql:/etc/mysql.d/init-icat.sql:ro \
+    -v db:/var/lib/mysql \
+    rkrahl/mariadb
+
+docker run -d -p 4848:4848 -p 8181:8181 --name icat -h icat \
+    --link mysql:mysql \
+    -v /root/docker/common/icat-certs:/etc/glassfish/certs:ro \
+    -v /root/docker/icat-4.8/icat:/opt/glassfish4/etc/icat:ro \
+    -v gfdomain:/opt/glassfish4/glassfish/domains \
+    -v storage:/srv/ids/storage \
+    -e GF_DOMAIN_LIBS="/usr/share/java/mysql-connector-java.jar" \
+    rkrahl/icat:4.8.0
+
+docker run -d -p 443:443 --name apache -h apache \
+    --link icat:icat \
+    -v /root/docker/common/apache:/etc/apache2:ro \
+    rkrahl/apache
+
+
+1. On the host system as root
+
+docker run -d --name mysql-test rkrahl/mariadb
+docker exec -ti mysql-test bash
+# ... show some content of the mysql-test container ...
+docker kill mysql-test
+docker rm mysql-test
+cat /root/docker/common/init-icat.sql
+docker run -d --name mysql-test -v /root/docker/common/init-icat.sql:/etc/mysql.d/init-icat.sql:ro rkrahl/mariadb
+docker exec -ti mysql-test bash
+# ... show some content of the mysql-test container ...
+docker kill mysql-test
+docker rm mysql-test
+
+# Show the additional container already started during preparation:
+docker ps -a
+docker exec -ti icat bash
+
+
+2. Inside the ICAT container
+
+id
+ls -la /etc/glassfish
+ls -la /etc/glassfish/certs
+ls -la /etc/glassfish.d
+ls -la ~/apps
+asadmin list-applications
+ls -la ~/etc/icat
+cat ~/etc/icat/APPS
+cat /etc/glassfish.d/setup-icat.sh
