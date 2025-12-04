@@ -19,3 +19,5 @@ title: 2025 Meetings
 [25th September 2025](/collaboration/communication/monthly-meetings/2025-meetings/20250925-meeting)
 
 [6th November 2025](/collaboration/communication/monthly-meetings/2025-meetings/20251106-meeting)
+
+[27 November 2025](/collaboration/communication/monthly-meetings/2025-meetings/20251127-meeting)
