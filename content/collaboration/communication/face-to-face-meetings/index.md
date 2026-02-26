@@ -2,6 +2,8 @@
 title: Face to face meetings
 ---
 
+[STFC Cosener's House, 10th - 11th February 2026](/collaboration/communication/face-to-face-meetings/2026-stfc/ "STFC 2026")
+
 [HZB 3rd - 4th May 2023](/collaboration/communication/face-to-face-meetings/2023-berlin/ "Berlin 2023")
 
 [ESRF Grenoble, France; 10th - 11th March 2020](/collaboration/communication/face-to-face-meetings/esrf-2020/ "ESRF 2020")
