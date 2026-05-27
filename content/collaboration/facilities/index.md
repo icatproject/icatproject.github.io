@@ -10,7 +10,7 @@ Some of these facilities are:
 - [European Synchrotron Radiation Facility (ESRF)](/collaboration/facilities/esrf/)
 - [The Helmholtz-Zentrum Berlin für Materialien und Energie (HZB)](/collaboration/facilities/hzb/)
 - [STFC's ISIS facility (ISIS)](/collaboration/facilities/isis/)
-- [ALBA Synchrotron Light Source (ALBA)](/collaboration/facilities/alba/)
+- [ALBA Synchrotron (ALBA)](/collaboration/facilities/alba/)
 - [Diamond Light Source (DLS)](https://diamond.ac.uk/)
 - [SESAME Light Source (SESAME)](https://www.sesame.org.jo/)
 
