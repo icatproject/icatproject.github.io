@@ -1,21 +1,18 @@
 ---
-title: ALBA Synchrotron Light Source
+title: ALBA Synchrotron
 ---
+[ALBA](https://www.cells.es/en) is a third-generation synchrotron light source facility and a key pillar of the Spanish and European Research Area, providing advanced research capabilities and a broad range of state-of-the-art scientific instrumentation to academic and industrial users. Located near Barcelona, in Cerdanyola del Vallès, ALBA accelerates electrons to nearly the speed of light, producing synchrotron radiation with exceptional brightness and stability. This light is delivered to specialized beamlines operating across a wide spectrum of techniques, enabling researchers to explore the structure and properties of matter from the atomic to the macroscopic scale.
 
-[ALBA](https://www.cells.es/) is a 3rd generation Synchrotron Light facility located in Cerdanyola del Vallès, (Barcelona), being the newest source in the Mediterranean area.
+As a multidisciplinary research infrastructure, ALBA supports scientific communities in areas such as life sciences, chemistry, materials science, nanotechnology, environmental sciences and cultural heritage. Its beamlines and complementary facilities, including advanced microscopy and multimodal characterization platforms, allow researchers to study complex systems under realistic conditions and across multiple length scales. Each year, thousands of national and international users access ALBA’s facilities, contributing to high-impact scientific publications, technological innovation, and industrial competitiveness.
 
-It is a complex of electron accelerators to produce synchrotron light, which allows the visualization of the atomic structure of matter as well as the study of its properties.  
+ALBA is now preparing its transition from a 3rd to a 4th generation synchrotron through the ALBA II upgrade program. This transformation will combine the complete renewal of the accelerator complex with the modernization of existing beamlines and the construction of new optimized long beamlines, taking advantage of adjacent land reserved for future expansion. In its first phase, ALBA II is expected to increase the number of operational beamlines from ten to seventeen, with the potential to reach twenty-six in later stages.
 
-ALBA began cataloging raw data using ICAT in 2020 when the integration with the first instrument, [BL11 NCD-SWEET](https://www.cells.es/en/beamlines/bl11-ncd) (SAXS/WAXS beamline), reached production status. Efforts are ongoing to gradually integrate the remaining instruments in the facility into the catalogue.
+![Exterior view of ALBA](/alba.jpg "Exterior view of ALBA Synchrotron.")
 
-Various data formats are used at the moment due to the heterogeneous landscape of techniques currently in operation. However, efforts are being made to gradually converge towards NeXus/HDF5.
+Since 2023, ALBA has operated its ICAT data catalogue infrastructure on Kubernetes. Deployment is achieved through the publicly available Helm chart [icat-k8s](https://artifacthub.io/packages/helm/alba-helm-charts/icat-k8s), which simplifies installation and enables fast onboarding of ICAT services in Kubernetes environments.
 
-The ingestion process uses ActiveMQ brokers as the entry point and to decouple it from the normal operation of the instruments, while the logic is implemented using Apache Camel in order to integrate and enrich the ingested data with metadata from the various information systems at the Synchrotron, including, but not limited to, our User Office Portal. The components used to parse and send data to the ingestion process are written using Python.
+On top of this infrastructure, ALBA uses the [Data Portal](https://gitlab.esrf.fr/icat/data-portal), developed by the European Synchrotron Radiation Facility, to provide a user-facing interface to the catalogue.
 
-ALBA uses the DataPortal frontend and the ICAT Plus REST API layer developed by the ESRF on top of the core ICAT stack. Authentication is done through [ALBA User Office](https://useroffice.cells.es/) accounts, while Umbrella support is being considered for the future.
+Data ingestion into the catalogue is performed asynchronously through [PACER (data ingestion engine for ICAT)](https://github.com/ALBA-Synchrotron/icat-pacer). The PACER is a high-throughput, event-driven ingestion service for ICAT that uses RabbitMQ to reliably queue and process metadata, enabling scalable and decoupled data cataloguing workflows.
 
-ALBA recently signed an agreement with DataCite to mint DOIs for raw data issued from public experiments.
-
-The ALBA Data Catalogue is currently not yet accessible from outside the facility but it is expected to be opened in 2022.
-
-![Exterior view of ALBA](/alba_birds_eye.jpg "Exterior view of ALBA")
+The ALBA Synchrotron’s Data Portal is accessible at  [data.cells.es](https://data.cells.es/) and is available for anyone with a [User Office](https://userofficesystem.cells.es/) account to browse public data with no embargo.
