@@ -1,0 +1,21 @@
+mysql_root_password = pw
+rootUserNames = anon/anon
+ids_reader = anon
+ids_rootUserNames = anon/anon
+root_credentials = anon
+
+enable-components = authn_anon, authn_simple, authn_ldap, authn_db, ids_server, icat_contents, topcat
+
+user0 = fred   
+password0 = fred pw
+user1 = bill
+password1 = bill pw
+
+provider_url = ldap://logon05.fed.cclrc.ac.uk
+security_principal = %@fed.cclrc.ac.uk
+
+
+
+
+
+
