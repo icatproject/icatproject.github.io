@@ -1,0 +1,5 @@
+mysql_root_password = pw
+rootUserNames = anon/anon
+ids_reader = anon
+ids_rootUserNames = anon/anon
+root_credentials = anon
