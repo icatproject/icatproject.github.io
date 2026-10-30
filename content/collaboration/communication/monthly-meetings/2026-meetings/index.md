@@ -21,3 +21,5 @@ title: 2026 Meetings
 [27th August 2026](/collaboration/communication/monthly-meetings/2026-meetings/20260827-meeting)
 
 [24th September 2026](/collaboration/communication/monthly-meetings/2026-meetings/20260924-meeting)
+
+[29th October 2026](/collaboration/communication/monthly-meetings/2026-meetings/20261029-meeting)
